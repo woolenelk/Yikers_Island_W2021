@@ -2,16 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+enum TargetStyle
+{
+    Single_RetargetOutRange, 
+    Single_RetargetOnFrame
+}
+
 public class TowerTargeting : MonoBehaviour
 {
     [SerializeField]
+    TargetStyle targetStyle = TargetStyle.Single_RetargetOutRange;
+    [SerializeField]
     float Range;
     [SerializeField]
-    SphereCollider sphereCollider;
-    [SerializeField]
-    List<GameObject> EnemysInRange;
-    [SerializeField]
     GameObject currentEnemyTarget;
+    [SerializeField] 
+    SphereCollider sphereCollider;
+    [SerializeField] 
+    List<GameObject> EnemysInRange;
+    
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -42,14 +52,21 @@ public class TowerTargeting : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (currentEnemyTarget == null || !EnemysInRange.Contains(currentEnemyTarget))
+        if (targetStyle == TargetStyle.Single_RetargetOutRange)
+        {
+            if (currentEnemyTarget == null || !EnemysInRange.Contains(currentEnemyTarget))
+            { ChooseNewTarget(); }
+        }
+        else if (targetStyle == TargetStyle.Single_RetargetOnFrame)
+        {
             ChooseNewTarget();
+        }
+
         //Draw lines to Each enemy in Range
         foreach (GameObject Enemy in EnemysInRange)
         {
             Debug.DrawLine(transform.position, Enemy.transform.position, Color.blue, Time.deltaTime);
         }
-
         if (currentEnemyTarget != null)
         {
             Debug.DrawLine(transform.position, currentEnemyTarget.transform.position, Color.red, Time.deltaTime + 0.01f);
