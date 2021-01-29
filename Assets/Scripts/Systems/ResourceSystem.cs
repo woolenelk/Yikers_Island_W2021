@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResourceSystem : MonoBehaviour
 {
@@ -19,33 +20,52 @@ public class ResourceSystem : MonoBehaviour
     }
 
     // Resources
-    private int Gold;
+    private int Plutonium;
     private int Ore;
     private int Energy;
+    public int EnergyMax;
+    // UI elements
+    public Text plutoniumText;
+    public Text oreText;
+    public Text energyText;
 
-    int GetGold()
+    public int GetPlutonium()
     {
-        return Gold;
+        return Plutonium;
     }
-    void SetGold(int gold)
+    public void SetPlutonium(int Plutonium)
     {
-        Gold = gold;
+        Plutonium = Plutonium;
     }
-    int GetOre()
+    public int GetOre()
     {
         return Ore;
     }
-    void SetOre(int ore)
+    public void SetOre(int ore)
     {
         Ore = ore;
     }
-    int GetEnergy()
+    public int GetEnergy()
     {
         return Energy;
     }
-    void SetEnergy(int energy)
+    public void SetEnergy(int energy)
     {
         Energy = energy;
     }
 
+    private void Start() // our starting resources
+    {
+        Plutonium = 50;
+        Ore = 50;
+        Energy = 0;
+        EnergyMax = 5;
+    }
+
+    private void Update()
+    {
+        plutoniumText.text = "Plutonium: " + Plutonium.ToString();
+        oreText.text = "Ore: " + Ore.ToString();
+        energyText.text = "Energy: " + Energy.ToString() + "/" + EnergyMax.ToString();
+    }
 }

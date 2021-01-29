@@ -6,28 +6,20 @@ enum TowerType
 {
     WALL,
     ATTACKING,
-    RESOURCE,
+    MINING,
+    ATOMIC,
     TOWER_COUNT
 }
 public class Tower : MonoBehaviour
 {
     [SerializeField]
-    private TowerType m_type;
+    private TowerType type;
     [SerializeField]
-    private int m_goldCost;
+    public int plutoniumCost;
     [SerializeField]
-    private int m_oreCost;
+    public int oreCost;
     [SerializeField]
-    private int m_energyCost;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int energyCost;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    internal TowerType Type { get => type; set => type = value; }
 }
