@@ -20,8 +20,11 @@ public class ResourceSystem : MonoBehaviour
     }
 
     // Resources
+    [SerializeField]
     private int Plutonium;
+    [SerializeField]
     private int Ore;
+    [SerializeField]
     private int Energy;
     public int EnergyMax;
     // UI elements
@@ -33,9 +36,9 @@ public class ResourceSystem : MonoBehaviour
     {
         return Plutonium;
     }
-    public void SetPlutonium(int Plutonium)
+    public void SetPlutonium(int plutonium)
     {
-        Plutonium = Plutonium;
+        Plutonium = plutonium;
     }
     public int GetOre()
     {
@@ -59,7 +62,7 @@ public class ResourceSystem : MonoBehaviour
         Plutonium = 50;
         Ore = 50;
         Energy = 0;
-        EnergyMax = 5;
+        //EnergyMax = 5;
     }
 
     private void Update()

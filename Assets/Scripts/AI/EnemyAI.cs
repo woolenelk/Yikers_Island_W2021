@@ -24,6 +24,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     GameObject currentTarget;
 
+    public HealthBar healthBar;
+
     private void OnTriggerEnter(Collider other)
     {
         if(!currentTarget.CompareTag("HUB"))
@@ -69,11 +71,13 @@ public class EnemyAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.radius = range;
+        healthBar.SetHealth(HP, HP);
     }
 
     // Update is called once per frame
     void Update()
     {
+        healthBar.SetHealth(HP, 20);
         if (HP <=0 )
         {
             StartCoroutine(Death());

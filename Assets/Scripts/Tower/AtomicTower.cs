@@ -14,7 +14,15 @@ public class AtomicTower : Tower
     private void Start()
     {
         StartCoroutine(Building());
-        ResourceSystem.Instance.EnergyMax += 1;
+        ResourceSystem.Instance.EnergyMax += 2;
+        maxHP = 20;
+        currentHP = maxHP;
+        healthBar.SetHealth(currentHP, maxHP);
+    }
+
+    private void Update()
+    {
+        healthBar.SetHealth(currentHP, maxHP);
     }
 
     IEnumerator Building() // we can add animation for building here
