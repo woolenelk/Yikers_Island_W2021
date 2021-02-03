@@ -8,7 +8,6 @@ enum PREF_TARGET { WALL, TOWER, RESOURCE, HUB};
 
 public class EnemyAI : MonoBehaviour
 {
-    Transform target;
     NavMeshAgent agent;
     
     [SerializeField]
@@ -41,20 +40,21 @@ public class EnemyAI : MonoBehaviour
                 if(other.CompareTag("Wall"))
                 {
                     currentTarget = other.gameObject;
-                    Debug.Log("Found Target");
-
+                    Debug.Log("Found Wall");
                 }
                 break;
             case PREF_TARGET.TOWER:
                 if (other.CompareTag("Tower"))
                 {
                     currentTarget = other.gameObject;
+                    Debug.Log("Found Tower");
                 }
                 break;
             case PREF_TARGET.RESOURCE:
                 if (other.CompareTag("Resource"))
                 {
                     currentTarget = other.gameObject;
+                    Debug.Log("Found Resource");
                 }
                 break;
             case PREF_TARGET.HUB:
@@ -69,7 +69,6 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         currentTarget = GameObject.FindGameObjectWithTag("HUB");
-        target = GameObject.FindGameObjectWithTag("HUB").transform;
         agent = GetComponent<NavMeshAgent>();
         sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.radius = range;
@@ -95,17 +94,20 @@ public class EnemyAI : MonoBehaviour
             currentTarget = GameObject.FindGameObjectWithTag("HUB");
             agent.SetDestination(currentTarget.transform.position);
         }
+        Debug.DrawLine(transform.position, currentTarget.transform.position, Color.cyan, Time.deltaTime);
         float distance = Vector3.Distance(transform.position, currentTarget.transform.position);
         if (agent == null)
             return;
-        if (distance > 1.5)
+        if (distance > 2.5)
         {
-            agent.updatePosition = true;
+            //agent.updatePosition = true;
+            agent.isStopped = false;
             //agent.SetDestination(target.position);
         }
         else
         {
-            agent.updatePosition = false;
+            //agent.updatePosition = false;
+            agent.isStopped = true;
         }
     }
 
