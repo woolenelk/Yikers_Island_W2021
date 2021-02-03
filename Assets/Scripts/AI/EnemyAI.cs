@@ -18,11 +18,15 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     float damage;
     [SerializeField]
+    int PlutoniumValue;
+    [SerializeField]
     PREF_TARGET targetting;
     [SerializeField]
     SphereCollider sphereCollider;
     [SerializeField]
     GameObject currentTarget;
+    [SerializeField]
+    bool Alive = true; 
 
     private void OnTriggerEnter(Collider other)
     {
@@ -69,21 +73,31 @@ public class EnemyAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.radius = range;
+        agent.SetDestination(currentTarget.transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (HP <=0 )
+        if (HP <=0 && Alive)
         {
+            Debug.Log("Now Dead");
+            agent.updatePosition = false;
+            Alive = false;
+            Destroy(agent);
+            transform.Translate(new Vector3(0, -100, 0));
+            GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceSystem>().AddPlutonium(PlutoniumValue);
             StartCoroutine(Death());
         }
-        float distance = Vector3.Distance(transform.position, target.position);
+        
         if(currentTarget == null)
         {
-            //target = GameObject.FindGameObjectWithTag("HUB").transform;
-            //agent.SetDestination(target.position);
+            currentTarget = GameObject.FindGameObjectWithTag("HUB");
+            agent.SetDestination(currentTarget.transform.position);
         }
+        float distance = Vector3.Distance(transform.position, currentTarget.transform.position);
+        if (agent == null)
+            return;
         if (distance > 1.5)
         {
             agent.updatePosition = true;
@@ -97,13 +111,17 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator Death()
     {
-        transform.Translate(new Vector3(0, -1000, 0));
-        yield return new WaitForSeconds(1.1f);
+        yield return new WaitForSeconds(0.1f);
         Destroy(this.gameObject);
     }
 
     public void TakeDamage(int damage)
     {
         HP -= damage;
+    }
+
+    public bool IsAlive()
+    {
+        return Alive;
     }
 }

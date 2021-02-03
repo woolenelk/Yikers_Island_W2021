@@ -118,6 +118,7 @@ public class TowerTargeting : MonoBehaviour
         {
             currentEnemyTarget.GetComponent<EnemyAI>().TakeDamage(Damage);
             timer = 1.0f / AttacksPerSecond;
+            
         }
     }
 }

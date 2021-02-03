@@ -113,9 +113,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetStyle: 0
-  AttacksPerSecond: 2
-  Damage: 3
-  Range: 7
+  AttacksPerSecond: 5
+  timer: 0
+  Damage: 1
+  Range: 8
   currentEnemyTarget: {fileID: 0}
   sphereCollider: {fileID: 0}
   EnemysInRange: []
