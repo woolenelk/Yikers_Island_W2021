@@ -9,6 +9,7 @@ TagManager:
   - HUB
   - Wall
   - Floor
+  - Resource
   layers:
   - Default
   - TransparentFX

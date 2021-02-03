@@ -74,6 +74,10 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (HP <=0 )
+        {
+            StartCoroutine(Death());
+        }
         float distance = Vector3.Distance(transform.position, target.position);
         if(currentTarget == null)
         {
@@ -89,5 +93,17 @@ public class EnemyAI : MonoBehaviour
         {
             agent.updatePosition = false;
         }
+    }
+
+    IEnumerator Death()
+    {
+        transform.Translate(new Vector3(0, -1000, 0));
+        yield return new WaitForSeconds(1.1f);
+        Destroy(this.gameObject);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        HP -= damage;
     }
 }

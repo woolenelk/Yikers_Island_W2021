@@ -13,6 +13,12 @@ public class TowerTargeting : MonoBehaviour
     [SerializeField]
     TargetStyle targetStyle = TargetStyle.Single_RetargetOutRange;
     [SerializeField]
+    int AttacksPerSecond;
+    [SerializeField]
+    float timer;
+    [SerializeField]
+    int Damage;
+    [SerializeField]
     float Range;
     [SerializeField]
     GameObject currentEnemyTarget;
@@ -45,6 +51,7 @@ public class TowerTargeting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timer = 0;
         sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.radius = Range;
     }
@@ -75,13 +82,16 @@ public class TowerTargeting : MonoBehaviour
 
     void ChooseNewTarget()
     {
+
         if (EnemysInRange.Count == 0)
         {
             currentEnemyTarget = null;
             return;
         }
         // Check for Closest Enemy
-        float closestDistance = Vector3.Distance(transform.position, EnemysInRange[0].transform.position);
+        float closestDistance = 10000000;
+        if (EnemysInRange[0] != null)
+            closestDistance = Vector3.Distance(transform.position, EnemysInRange[0].transform.position);
         GameObject Target = EnemysInRange[0];
         foreach (GameObject Enemy in EnemysInRange)
         {
@@ -92,5 +102,22 @@ public class TowerTargeting : MonoBehaviour
             }
         }
         currentEnemyTarget = Target;
+    }
+
+    private void Update()
+    {
+        if (currentEnemyTarget == null)
+            return;
+
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+
+        if (timer <= 0 && currentEnemyTarget != null)
+        {
+            currentEnemyTarget.GetComponent<EnemyAI>().TakeDamage(Damage);
+            timer = 1.0f / AttacksPerSecond;
+        }
     }
 }
