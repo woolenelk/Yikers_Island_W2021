@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Instructions.unity
     guid: dfeba13411e83d24f95622578647b932
   - enabled: 1
+    path: Assets/Scenes/Options.unity
+    guid: 31fe525e7bf56354a85b0cdecb2c3aff
+  - enabled: 1
     path: Assets/Scenes/YikersIsland.unity
     guid: 66e378cb49cfd5249a790596917ec892
   - enabled: 1

@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 146931452}
   - component: {fileID: 146931451}
   - component: {fileID: 146931450}
+  - component: {fileID: 146931449}
   m_Layer: 5
   m_Name: Quit Button
   m_TagString: Untagged
@@ -162,6 +163,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &146931449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146931447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b51f9683543ad4580a9f903d2c9c11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &146931450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +218,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 146931451}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 146931449}
+        m_TargetAssemblyTypeName: QuitButtonBehaviour, Assembly-CSharp
+        m_MethodName: OnQuitButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &146931451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +281,7 @@ GameObject:
   - component: {fileID: 187069916}
   - component: {fileID: 187069915}
   - component: {fileID: 187069914}
+  - component: {fileID: 187069913}
   m_Layer: 5
   m_Name: Options Button
   m_TagString: Untagged
@@ -283,6 +309,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &187069913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187069911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ecdea3904d02674eb91f34e93748cff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &187069914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,7 +364,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 187069915}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 187069913}
+        m_TargetAssemblyTypeName: OptionsButtonBehaviour, Assembly-CSharp
+        m_MethodName: OnOptionsButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &187069915
 MonoBehaviour:
   m_ObjectHideFlags: 0
