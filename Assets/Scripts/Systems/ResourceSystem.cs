@@ -33,25 +33,42 @@ public class ResourceSystem : MonoBehaviour
     {
         return Plutonium;
     }
-    public void SetPlutonium(int Plutonium)
+    public void SetPlutonium(int _Plutonium)
     {
-        Plutonium = Plutonium;
+        Plutonium = _Plutonium;
     }
+
+    public void AddPlutonium( int _Plutonium)
+    {
+        Plutonium += _Plutonium;
+    }
+
     public int GetOre()
     {
         return Ore;
     }
-    public void SetOre(int ore)
+    public void SetOre(int _ore)
     {
-        Ore = ore;
+        Ore = _ore;
     }
+
+    public void AddOre(int _ore)
+    {
+        Ore += _ore;
+    }
+
     public int GetEnergy()
     {
         return Energy;
     }
-    public void SetEnergy(int energy)
+    public void SetEnergy(int _energy)
     {
-        Energy = energy;
+        Energy = _energy;
+    }
+
+    public void AddEnergy(int _energy)
+    {
+        Energy += _energy;
     }
 
     private void Start() // our starting resources
