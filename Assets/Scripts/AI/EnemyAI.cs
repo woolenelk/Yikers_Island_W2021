@@ -98,17 +98,17 @@ public class EnemyAI : MonoBehaviour
         float distance = Vector3.Distance(transform.position, currentTarget.transform.position);
         if (agent == null)
             return;
-        if (distance > 2.5)
-        {
-            //agent.updatePosition = true;
-            agent.isStopped = false;
-            //agent.SetDestination(target.position);
-        }
-        else
-        {
-            //agent.updatePosition = false;
-            agent.isStopped = true;
-        }
+        //if (distance > 2.5f)
+        //{
+        //    //agent.updatePosition = true;
+        //    agent.isStopped = false;
+        //    //agent.SetDestination(target.position);
+        //}
+        //else
+        //{
+        //    //agent.updatePosition = false;
+        //    agent.isStopped = true;
+        //}
     }
 
     IEnumerator Death()
