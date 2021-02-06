@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
 {
     private Vector3 touchStart, direction;
     public Camera cam;
-    public Text text;
+    //public Text text;
 
     public float groundZ = 0f, zoomMin, zoomMax, cameraDistance, scrollSpeed;
 
@@ -39,7 +39,7 @@ public class CameraController : MonoBehaviour
                 if (cameraDistance != zoomMax && cameraDistance != zoomMin)
                 {
                     Camera.main.transform.position += Vector3.forward * difference + Vector3.down * difference;
-                    text.text = "curr < prev " + difference.ToString();
+                    //text.text = "curr < prev " + difference.ToString();
                 }
             }
             if (difference > 0)
@@ -47,7 +47,7 @@ public class CameraController : MonoBehaviour
                 if (cameraDistance != zoomMin && cameraDistance != zoomMax)
                 {
                     Camera.main.transform.position -= Vector3.forward * difference + Vector3.down * difference;
-                    text.text = "curr > prev " + difference.ToString();
+                    //text.text = "curr > prev " + difference.ToString();
                 }
             }
         }
