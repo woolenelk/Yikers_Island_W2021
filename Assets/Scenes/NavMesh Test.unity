@@ -2845,7 +2845,7 @@ Camera:
   far clip plane: 300
   field of view: 60
   orthographic: 1
-  orthographic size: 70
+  orthographic size: 77.4
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -3200,7 +3200,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1135655263
 MonoBehaviour:
@@ -3548,12 +3548,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1203968630}
-  text: {fileID: 0}
   groundZ: 0
-  zoomMin: 0
-  zoomMax: 0
-  cameraDistance: 0
-  scrollSpeed: 0
+  zoomMin: -2.1
+  zoomMax: -1.95
+  cameraDistance: -1.95
+  scrollSpeed: 0.15
 --- !u!1 &1222481166
 GameObject:
   m_ObjectHideFlags: 0
@@ -6477,6 +6476,14 @@ PrefabInstance:
     - target: {fileID: 1980439921894208583, guid: c3501732f845199478fec6d78ab5a64b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571641130067824884, guid: c3501732f845199478fec6d78ab5a64b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571641130067824884, guid: c3501732f845199478fec6d78ab5a64b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3501732f845199478fec6d78ab5a64b, type: 3}
