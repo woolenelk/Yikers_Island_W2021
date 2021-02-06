@@ -21,5 +21,10 @@ public class Tower : MonoBehaviour
     [SerializeField]
     public int energyCost;
 
+    public int currentHP;
+    public int maxHP;
+
+    public HealthBar healthBar;
+
     internal TowerType Type { get => type; set => type = value; }
 }
