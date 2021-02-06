@@ -3551,8 +3551,8 @@ MonoBehaviour:
   groundZ: 0
   zoomMin: -2.1
   zoomMax: -1.95
-  cameraDistance: -1.95
-  scrollSpeed: 0.15
+  cameraDistance: -2
+  scrollSpeed: 0.1
 --- !u!1 &1222481166
 GameObject:
   m_ObjectHideFlags: 0
