@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2302504032290286335}
   - component: {fileID: 5265851333544308869}
   - component: {fileID: 1109333304177817399}
+  - component: {fileID: 5643763435225346735}
   m_Layer: 0
   m_Name: AtomicTower
   m_TagString: Untagged
@@ -72,6 +73,22 @@ MonoBehaviour:
   currentHP: 0
   maxHP: 0
   healthBar: {fileID: 7561365662425598652}
+--- !u!208 &5643763435225346735
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495181449431707717}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &6552875264071558097
 GameObject:
   m_ObjectHideFlags: 0

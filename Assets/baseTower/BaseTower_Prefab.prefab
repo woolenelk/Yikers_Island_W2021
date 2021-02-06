@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2383822423298700972}
   - component: {fileID: 8643855783230549206}
   m_Layer: 0
-  m_Name: BaseTower
-  m_TagString: Untagged
+  m_Name: BaseTower_Prefab
+  m_TagString: HUB
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
