@@ -6453,11 +6453,23 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4909620578242376766, guid: e80b8bcad1bc2104db2f9c9e19b78fc8, type: 3}
+      propertyPath: HPMAX
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909620578242376766, guid: e80b8bcad1bc2104db2f9c9e19b78fc8, type: 3}
       propertyPath: range
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4909620578242376766, guid: e80b8bcad1bc2104db2f9c9e19b78fc8, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909620578242376766, guid: e80b8bcad1bc2104db2f9c9e19b78fc8, type: 3}
       propertyPath: targetting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909620578242376766, guid: e80b8bcad1bc2104db2f9c9e19b78fc8, type: 3}
+      propertyPath: PlutoniumValue
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

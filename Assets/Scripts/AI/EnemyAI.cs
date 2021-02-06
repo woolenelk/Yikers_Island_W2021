@@ -13,6 +13,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     int HP;
     [SerializeField]
+    int HPMAX;
+    [SerializeField]
     float range;
     [SerializeField]
     float damage;
@@ -82,8 +84,8 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
 
-        if (HP <=0 && Alive)
-			healthBar.SetHealth(HP, 20);
+        
+		healthBar.SetHealth(HP, HPMAX);
         if (HP <=0 )
         {
             Debug.Log("Now Dead");
