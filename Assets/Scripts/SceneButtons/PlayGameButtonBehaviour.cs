@@ -7,6 +7,8 @@ public class PlayGameButtonBehaviour : MonoBehaviour
 {
     public void OnPlayButtonPressed()
     {
-        SceneManager.LoadScene("YikersIsland");
+        //SceneManager.LoadScene("YikersIsland");
+        SceneManager.LoadScene("NavMesh Test");
+
     }
 }
