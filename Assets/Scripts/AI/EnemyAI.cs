@@ -86,14 +86,14 @@ public class EnemyAI : MonoBehaviour
 
         
 		healthBar.SetHealth(HP, HPMAX);
-        if (HP <=0 )
+        if (HP <=0 && Alive)
         {
             Debug.Log("Now Dead");
             agent.updatePosition = false;
             Alive = false;
             agent.enabled = false;
             transform.Translate(new Vector3(0, -100, 0));
-            
+            GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceSystem>().AddPlutonium(PlutoniumValue);
             StartCoroutine(Death());
         }
         
@@ -121,7 +121,7 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator Death()
     {
-        GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceSystem>().AddPlutonium(PlutoniumValue);
+        
         yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
     }
