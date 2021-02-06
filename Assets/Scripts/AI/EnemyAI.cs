@@ -89,9 +89,9 @@ public class EnemyAI : MonoBehaviour
             Debug.Log("Now Dead");
             agent.updatePosition = false;
             Alive = false;
-            Destroy(agent);
+            agent.enabled = false;
             transform.Translate(new Vector3(0, -100, 0));
-            GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceSystem>().AddPlutonium(PlutoniumValue);
+            
             StartCoroutine(Death());
         }
         
@@ -119,7 +119,8 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator Death()
     {
-        yield return new WaitForSeconds(0.1f);
+        GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceSystem>().AddPlutonium(PlutoniumValue);
+        yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
     }
 

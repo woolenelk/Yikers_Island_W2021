@@ -8,5 +8,6 @@ public class ReturnToMainMenuButtonBehaviour : MonoBehaviour
     public void OnReturnButtonPressed()
     {
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1.0f;
     }
 }
