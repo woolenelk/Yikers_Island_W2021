@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class WaveManager : MonoBehaviour
     int EnemysPerWave;
     [SerializeField]
     bool isSpawningWave;
+    [SerializeField]
+    int LASTWAVE = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,11 @@ public class WaveManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (wave >LASTWAVE)
+        {
+            //change to Win Screen
+            SceneManager.LoadScene("GameOver");
+        }
         if (!isSpawningWave && GameObject.FindGameObjectsWithTag("Enemy").Length <= 0)
         {
             StartCoroutine(SpawnWave());

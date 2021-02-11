@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HubTower : Tower
 {
@@ -19,5 +20,9 @@ public class HubTower : Tower
     void Update()
     {
         healthBar.SetHealth(currentHP, maxHP);
+        if (currentHP <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }
