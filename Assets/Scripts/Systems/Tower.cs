@@ -8,6 +8,7 @@ enum TowerType
     ATTACKING,
     MINING,
     ATOMIC,
+    HUB,
     TOWER_COUNT
 }
 public class Tower : MonoBehaviour
