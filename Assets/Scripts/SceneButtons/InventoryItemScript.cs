@@ -9,6 +9,4 @@ public class InventoryItemScript : MonoBehaviour, IPointerClickHandler
     {
         Debug.Log("Tower Selected");
     }
-
-    
 }
