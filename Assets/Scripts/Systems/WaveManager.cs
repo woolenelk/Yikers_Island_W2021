@@ -38,8 +38,7 @@ public class WaveManager : MonoBehaviour
     {
         if (wave >LASTWAVE)
         {
-            //TODO: change to Win Screen
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("Victory");
         }
         if (!isSpawningWave && GameObject.FindGameObjectsWithTag("Enemy").Length <= 0)
         {
