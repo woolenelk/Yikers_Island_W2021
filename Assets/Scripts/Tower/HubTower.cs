@@ -22,6 +22,7 @@ public class HubTower : Tower
         healthBar.SetHealth(currentHP, maxHP);
         if (currentHP <= 0)
         {
+
             SceneManager.LoadScene("GameOver");
         }
     }

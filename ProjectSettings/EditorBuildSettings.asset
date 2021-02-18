@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GameOver.unity
     guid: 2886371071a7ca34381ecead6fcd9abb
   - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: aa5dab62689b6c547b67259e3ae3a660
+  - enabled: 1
     path: Assets/Scenes/NavMesh Test.unity
     guid: 1d74efb90df5cdf41ba92e66904be986
   m_configObjects: {}
