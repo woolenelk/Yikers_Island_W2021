@@ -31,7 +31,8 @@ public class CameraController : MonoBehaviour
             float currentMagnitude = (touchZero.position - touchOne.position).magnitude;
 
             float difference = currentMagnitude - prevMagnitude;
-
+            // clamp z 40 to -70
+            // clamp x 100 to -100
             cameraDistance += difference * scrollSpeed;
             cameraDistance = Mathf.Clamp(cameraDistance, zoomMin, zoomMax);
             if (difference < 0)
@@ -56,6 +57,13 @@ public class CameraController : MonoBehaviour
         {
             direction = touchStart - GetWorldPosition(groundZ);
             Camera.main.transform.position += direction;
+
+            float clampX = Mathf.Clamp(Camera.main.transform.position.x, -100, 100);
+            //float clampX = Mathf.Clamp(Camera.main.transform.position.x, -100, 100);
+            float clampZ = Mathf.Clamp(Camera.main.transform.position.z, -70, 40);
+
+            Camera.main.transform.position = new Vector3(clampX, Camera.main.transform.position.y, clampZ);
+
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") != 0)
