@@ -27,6 +27,9 @@ public class TowerTargeting : MonoBehaviour
     [SerializeField] 
     List<GameObject> EnemysInRange;
 
+    [SerializeField]
+    AudioSource AttackSound;
+
     public HealthBar healthBar;
 
     private void OnTriggerEnter(Collider other)
@@ -52,6 +55,7 @@ public class TowerTargeting : MonoBehaviour
     void Start()
     {
         timer = 0;
+        AttackSound = GetComponent<AudioSource>();
         sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.radius = Range;
         healthBar.SetHealth(10, 10); // we can put in health later
@@ -118,6 +122,7 @@ public class TowerTargeting : MonoBehaviour
 
         if (timer <= 0 && currentEnemyTarget != null)
         {
+            AttackSound.Play();
             currentEnemyTarget.GetComponent<EnemyAI>().TakeDamage(Damage);
             timer = 1.0f / AttacksPerSecond;
             
