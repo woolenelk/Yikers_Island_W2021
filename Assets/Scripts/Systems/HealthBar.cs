@@ -16,6 +16,7 @@ public class HealthBar : MonoBehaviour
     {
         //healthSlider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + offset);
         //healthSlider.transform.position = offset;
+        healthSlider.transform.rotation = Quaternion.identity;
     }
 
     public void SetHealth(int health, int maxHealth)
