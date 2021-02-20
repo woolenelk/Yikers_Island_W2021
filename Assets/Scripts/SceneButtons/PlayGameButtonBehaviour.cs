@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayGameButtonBehaviour : MonoBehaviour
 {
+    public AudioSource buttonSound;
     public void OnPlayButtonPressed()
     {
         //SceneManager.LoadScene("YikersIsland");
+        buttonSound.Play();
         SceneManager.LoadScene("NavMesh Test");
 
     }
