@@ -29,6 +29,11 @@ public class TowerTargeting : MonoBehaviour
 
     public HealthBar healthBar;
 
+    public Animator animr;
+    public Transform pitch;
+    public Transform yaw;
+
+
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Something Entered");
@@ -55,6 +60,8 @@ public class TowerTargeting : MonoBehaviour
         sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.radius = Range;
         healthBar.SetHealth(10, 10); // we can put in health later
+
+        animr = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -88,6 +95,7 @@ public class TowerTargeting : MonoBehaviour
         if (EnemysInRange.Count == 0)
         {
             currentEnemyTarget = null;
+            animr.SetBool("SeesEnemy", false);
             return;
         }
         // Check for Closest Enemy
@@ -104,6 +112,7 @@ public class TowerTargeting : MonoBehaviour
             }
         }
         currentEnemyTarget = Target;
+        animr.SetBool("SeesEnemy", true);
     }
 
     private void Update()
@@ -120,7 +129,26 @@ public class TowerTargeting : MonoBehaviour
         {
             currentEnemyTarget.GetComponent<EnemyAI>().TakeDamage(Damage);
             timer = 1.0f / AttacksPerSecond;
-            
+
+
+            AimAtTarget();
         }
+    }
+
+
+    private void AimAtTarget()
+    {
+        float dy = currentEnemyTarget.transform.position.y - pitch.position.y;
+        float h = Vector3.Distance(currentEnemyTarget.transform.position, pitch.position);
+
+        float theta = Mathf.Rad2Deg * Mathf.Asin(dy / h);
+
+        Debug.Log(theta);
+
+        animr.SetFloat("PitchAngle", theta);
+
+
+        float yawAngle = Vector3.Angle(Vector3.ProjectOnPlane(currentEnemyTarget.transform.position - transform.position, Vector3.up), -transform.forward);
+        animr.SetFloat("YawAngle", yawAngle);
     }
 }

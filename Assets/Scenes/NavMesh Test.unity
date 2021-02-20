@@ -1777,6 +1777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42cb84cb3ed9ad147be9ceabcdd3eb65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WaveReached: 0
 --- !u!4 &431081551
 Transform:
   m_ObjectHideFlags: 0
