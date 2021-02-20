@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3230264045949860834}
   - component: {fileID: 806359017635860264}
   m_Layer: 0
-  m_Name: IslandBase 1
+  m_Name: YikersIsland_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166501783731826429}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 2.5842352, y: -4.99, z: 5.1}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 7571641130067824884}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &3230264045949860834
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -148,6 +148,10 @@ PrefabInstance:
     - target: {fileID: 3345213527553187204, guid: f3f242491e7e16f49a859a376d5495e8, type: 3}
       propertyPath: m_Name
       value: WaterPlane_Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345213527553187204, guid: f3f242491e7e16f49a859a376d5495e8, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3f242491e7e16f49a859a376d5495e8, type: 3}

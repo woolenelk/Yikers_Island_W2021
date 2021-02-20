@@ -88,4 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eff5418faf72c640ab71c25cee5a12b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: 3
+  tower: 1
+  TowerTransparent: {fileID: 1190037696510315186, guid: df6126645bedb754caac8e09e02c94ef, type: 3}
+  MiningTransparent: {fileID: 4653526430327266060, guid: 660006761ac9e1b44aad66d8b6895929, type: 3}
+  WallTransparent: {fileID: 4053762486758101343, guid: 377987806bb1fe7499e0efd033806226, type: 3}
+  AtomicTransparent: {fileID: 0}

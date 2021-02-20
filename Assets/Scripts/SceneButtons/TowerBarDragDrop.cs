@@ -6,7 +6,13 @@ using UnityEngine.EventSystems;
 public class TowerBarDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
     [SerializeField]
-    TowerType tower = TowerType.ATOMIC;
+    TowerType tower = TowerType.ATTACKING;
+
+    public GameObject TowerTransparent;
+    public GameObject MiningTransparent;
+    public GameObject AtomicTransparent;
+    public GameObject WallTransparent;
+
     private void Awake()
     {
 
@@ -16,6 +22,7 @@ public class TowerBarDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHa
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
+
         }
         //if (eventData.button == PointerEventData.InputButton.Right)
         //{ }
@@ -38,8 +45,28 @@ public class TowerBarDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHa
 
     public void OnPointerDown(PointerEventData eventData)
     {
-
         Debug.Log("DragPointerDown");
+        switch (tower)
+        {
+            case TowerType.ATTACKING:
+                Debug.Log("Attack Tower Selected");
+                Instantiate(TowerTransparent);
+                break;
+            case TowerType.MINING:
+                Debug.Log("Mining Selected");
+                Instantiate(MiningTransparent);
+                break;
+            case TowerType.ATOMIC:
+                Debug.Log("Atomic Tower Selected");
+                Instantiate(AtomicTransparent);
+                break;
+            case TowerType.WALL:
+                Debug.Log("Wall Tower Selected");
+                Instantiate(WallTransparent);
+                break;
+            default:
+                break;
+        }
     }
 
     /// <summary>
