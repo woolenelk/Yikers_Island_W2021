@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class CreditsButtonbehaviour : MonoBehaviour
 {
+    public AudioSource buttonSound;
     public void OnCreditsButtonPressed()
     {
+        buttonSound.Play();
         SceneManager.LoadScene("Credits");
     }
 }

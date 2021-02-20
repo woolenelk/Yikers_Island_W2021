@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class OptionsButtonBehaviour : MonoBehaviour
 {
+    public AudioSource buttonSound;
     public void OnOptionsButtonPressed()
     {
+        buttonSound.Play();
         SceneManager.LoadScene("Options");
     }
 }
