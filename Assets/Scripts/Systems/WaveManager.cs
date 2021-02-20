@@ -19,7 +19,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     int LASTWAVE = 10;
 
-    private StatMoverScript StatMover;
+    //private StatMoverScript StatMover;
 
     [Header("UI")]
     [SerializeField]
@@ -28,7 +28,8 @@ public class WaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StatMover = FindObjectOfType<StatMoverScript>();
+        StatMoverScript.Instance.WaveReached = wave;
+        //StatMover = FindObjectOfType<StatMoverScript>();
         isSpawningWave = false;
         ScoreText.text = "Curent Wave: " + wave.ToString();
     }
@@ -53,7 +54,8 @@ public class WaveManager : MonoBehaviour
         int EnemyTypeToSpawn = Random.Range(0, EnemysTypes.Count);
         wave++;
         ScoreText.text = "Curent Wave: " + wave.ToString();
-        StatMover.WaveReached = wave;
+        StatMoverScript.Instance.WaveReached = wave;
+        //StatMover.WaveReached = wave;
         for (int i = 0; i < EnemysPerWave; i++)
         {
             Instantiate(EnemysTypes[EnemyTypeToSpawn], SpawnPoints[WhichSpawnPoint].transform.position, Quaternion.identity);
