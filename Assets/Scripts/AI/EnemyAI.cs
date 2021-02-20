@@ -121,8 +121,9 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator Death()
     {
-        
+        ResourceSystem.Instance.AddPlutonium(PlutoniumValue);
         yield return new WaitForSeconds(0.5f);
+        
         Destroy(this.gameObject);
     }
 
