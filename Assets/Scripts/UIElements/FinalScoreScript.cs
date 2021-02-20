@@ -11,8 +11,8 @@ public class FinalScoreScript : MonoBehaviour
     void Start()
     {
         Score = GetComponent<Text>();
-
-        Score.text = FindObjectOfType<StatMoverScript>().WaveReached.ToString();
+        Score.text = StatMoverScript.Instance.WaveReached.ToString();
+        //Score.text = FindObjectOfType<StatMoverScript>().WaveReached.ToString();
     }
 
     
