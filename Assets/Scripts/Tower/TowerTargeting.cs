@@ -30,7 +30,7 @@ public class TowerTargeting : MonoBehaviour
     [SerializeField]
     AudioSource AttackSound;
 
-    public HealthBar healthBar;
+    //public HealthBar healthBar;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -58,13 +58,13 @@ public class TowerTargeting : MonoBehaviour
         AttackSound = GetComponent<AudioSource>();
         sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.radius = Range;
-        healthBar.SetHealth(10, 10); // we can put in health later
+        //healthBar.SetHealth(10, 10); // we can put in health later
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        healthBar.SetHealth(10, 10);
+        //healthBar.SetHealth(10, 10);
         if (targetStyle == TargetStyle.Single_RetargetOutRange)
         {
             if (currentEnemyTarget == null || !EnemysInRange.Contains(currentEnemyTarget))

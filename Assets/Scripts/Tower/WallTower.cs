@@ -8,17 +8,17 @@ public class WallTower : Tower
     private void Awake()
     {
         Type = TowerType.WALL;
-        plutoniumCost = 10;
+        //plutoniumCost = 10;
     }
     // Start is called before the first frame update
     void Start()
     {
-        healthBar.SetHealth(currentHP, maxHP);
+        PayCost();
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthBar.SetHealth(currentHP, maxHP);
+        updateHealth();
     }
 }

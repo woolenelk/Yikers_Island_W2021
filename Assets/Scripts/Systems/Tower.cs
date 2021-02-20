@@ -28,4 +28,26 @@ public class Tower : MonoBehaviour
     public HealthBar healthBar;
 
     internal TowerType Type { get => type; set => type = value; }
+
+    public void Start()
+    {
+        PayCost();
+    }
+
+    public void PayCost()
+    {
+        ResourceSystem.Instance.AddEnergy(energyCost);
+        ResourceSystem.Instance.AddOre(-oreCost);
+        ResourceSystem.Instance.AddPlutonium(-plutoniumCost);
+    }
+
+    public void FixedUpdate()
+    {
+        updateHealth();
+    }
+    public void updateHealth()
+    {
+        healthBar.SetHealth(currentHP, maxHP);
+    }
+
 }

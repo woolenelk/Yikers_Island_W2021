@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1109333304177817399}
   m_Layer: 0
   m_Name: AtomicTower
-  m_TagString: Untagged
+  m_TagString: Energy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,12 +66,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a187f7cc2dfe64418893ac01446ab41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  plutoniumCost: 0
+  type: 3
+  plutoniumCost: 2
   oreCost: 0
   energyCost: 0
-  currentHP: 0
-  maxHP: 0
+  currentHP: 20
+  maxHP: 20
   healthBar: {fileID: 7561365662425598652}
 --- !u!1 &6062770388813153439
 GameObject:

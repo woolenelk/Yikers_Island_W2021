@@ -11,6 +11,7 @@ TagManager:
   - Floor
   - Resource
   - ResourceManager
+  - Energy
   layers:
   - Default
   - TransparentFX

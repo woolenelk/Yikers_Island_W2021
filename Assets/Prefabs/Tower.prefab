@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1190037696510315195}
   - component: {fileID: 6804893221642425517}
   - component: {fileID: 2970747457571140983}
+  - component: {fileID: 6540920201036571654}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Tower
@@ -124,7 +125,6 @@ MonoBehaviour:
   sphereCollider: {fileID: 0}
   EnemysInRange: []
   AttackSound: {fileID: 0}
-  healthBar: {fileID: 5867515224654355569}
 --- !u!135 &1190037696510315197
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -266,6 +266,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6540920201036571654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190037696510315186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb8cefe20a8268498d035bb4f37ee3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  plutoniumCost: 0
+  oreCost: 10
+  energyCost: 0
+  currentHP: 20
+  maxHP: 20
+  healthBar: {fileID: 5867515224654355569}
 --- !u!1 &6023530686131728599
 GameObject:
   m_ObjectHideFlags: 0
