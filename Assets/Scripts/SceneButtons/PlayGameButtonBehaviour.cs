@@ -8,7 +8,7 @@ public class PlayGameButtonBehaviour : MonoBehaviour
     public AudioSource buttonSound;
     public void OnPlayButtonPressed()
     {
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
         //SceneManager.LoadScene("YikersIsland");
         buttonSound.Play();
         SceneManager.LoadScene("NavMesh Test");
