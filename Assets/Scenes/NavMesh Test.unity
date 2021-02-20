@@ -7834,7 +7834,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4328748389985000148, guid: 964ca14d24d4d0044a26703e6143efba, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4653526430327266054, guid: 964ca14d24d4d0044a26703e6143efba, type: 3}
       propertyPath: m_RootOrder
@@ -7883,6 +7883,10 @@ PrefabInstance:
     - target: {fileID: 4653526430327266060, guid: 964ca14d24d4d0044a26703e6143efba, type: 3}
       propertyPath: m_Name
       value: Mining Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653526430327266060, guid: 964ca14d24d4d0044a26703e6143efba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 964ca14d24d4d0044a26703e6143efba, type: 3}
