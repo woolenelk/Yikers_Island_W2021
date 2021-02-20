@@ -8,6 +8,7 @@ public class ResumeButtonbehaviour : MonoBehaviour
     public void OnResumeButtonPressed()
     {
         Time.timeScale = 1.0f;
+        GetComponent<AudioSource>().Play();
         PauseCanvas.SetActive(false);
     }
 }

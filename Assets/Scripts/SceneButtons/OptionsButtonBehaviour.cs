@@ -7,6 +7,7 @@ public class OptionsButtonBehaviour : MonoBehaviour
 {
     public void OnOptionsButtonPressed()
     {
+        GetComponent<AudioSource>().Play();
         SceneManager.LoadScene("Options");
     }
 }

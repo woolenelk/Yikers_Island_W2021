@@ -7,6 +7,7 @@ public class GameOverButtonbehaviour : MonoBehaviour
 {
     public void OnGameOverButtonPressed()
     {
+        GetComponent<AudioSource>().Play();
         SceneManager.LoadScene("GameOver");
     }
 }
