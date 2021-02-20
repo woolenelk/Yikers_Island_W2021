@@ -223,6 +223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Inventory Item (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5721061890737525930, guid: 38d7649c987cc02499731a7df6871cf9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0f8bc783d17048140b9b0d3dc6a986f5, type: 3}
     - target: {fileID: 5721061890737525931, guid: 38d7649c987cc02499731a7df6871cf9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5061,6 +5065,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Inventory Item (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5721061890737525930, guid: 38d7649c987cc02499731a7df6871cf9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e3a450dcdc965c149a81723f49c461fb, type: 3}
     - target: {fileID: 5721061890737525931, guid: 38d7649c987cc02499731a7df6871cf9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5952,6 +5960,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Inventory Item
       objectReference: {fileID: 0}
+    - target: {fileID: 5721061890737525930, guid: 38d7649c987cc02499731a7df6871cf9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b93575d85f17bdf4abfd31b51d6da446, type: 3}
     - target: {fileID: 5721061890737525931, guid: 38d7649c987cc02499731a7df6871cf9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6838,6 +6850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Inventory Item (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5721061890737525930, guid: 38d7649c987cc02499731a7df6871cf9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2e4bc709aaf4aad459aac7d1e3ee2dc1, type: 3}
     - target: {fileID: 5721061890737525931, guid: 38d7649c987cc02499731a7df6871cf9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
