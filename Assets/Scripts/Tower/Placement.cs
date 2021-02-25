@@ -34,7 +34,7 @@ public class Placement : MonoBehaviour
         {
             transform.position = hit.point + offset;
         }
-        if (name == "Tower Transparent(Clone)")
+        if (name == "TowerTransparentUpright(Clone)")
         {
             if (Input.GetMouseButton(1))
             {

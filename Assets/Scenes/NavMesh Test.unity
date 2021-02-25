@@ -4530,7 +4530,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203968626}
   m_LocalRotation: {x: 0.28652453, y: 0, z: 0, w: 0.95807296}
-  m_LocalPosition: {x: 57.3, y: 11.5, z: -31.1}
+  m_LocalPosition: {x: 65.33, y: 11.5, z: -31.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 499579981}
@@ -5971,18 +5971,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1222481167}
     m_Modifications:
-    - target: {fileID: 192713592, guid: 38d7649c987cc02499731a7df6871cf9, type: 3}
-      propertyPath: AtomicTransparent
-      value: 
-      objectReference: {fileID: 1495181449431707717, guid: 45f1ed4e5020c6f41832d53ac830eb3b, type: 3}
     - target: {fileID: 5721061890737525928, guid: 38d7649c987cc02499731a7df6871cf9, type: 3}
       propertyPath: m_Name
       value: Tower Inventory Item
       objectReference: {fileID: 0}
-    - target: {fileID: 5721061890737525930, guid: 38d7649c987cc02499731a7df6871cf9, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b93575d85f17bdf4abfd31b51d6da446, type: 3}
     - target: {fileID: 5721061890737525931, guid: 38d7649c987cc02499731a7df6871cf9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
