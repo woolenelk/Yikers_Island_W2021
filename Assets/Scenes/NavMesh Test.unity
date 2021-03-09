@@ -1946,6 +1946,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464859054}
   m_CullTransparentMesh: 1
+--- !u!1 &476104071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 476104073}
+  - component: {fileID: 476104072}
+  - component: {fileID: 476104074}
+  m_Layer: 0
+  m_Name: KeyboardSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &476104072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476104071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0453afb3a80294fa51de666545430a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TowerTransparent: {fileID: 7519014267487282702, guid: 527ae0bc43b33bc4d8740862db84520f, type: 3}
+  MiningTransparent: {fileID: 4653526430327266060, guid: 660006761ac9e1b44aad66d8b6895929, type: 3}
+  AtomicTransparent: {fileID: 1495181449431707717, guid: 45f1ed4e5020c6f41832d53ac830eb3b, type: 3}
+  WallTransparent: {fileID: 4053762486758101343, guid: 377987806bb1fe7499e0efd033806226, type: 3}
+--- !u!4 &476104073
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476104071}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 752.5, y: 475, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 33
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &476104074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476104071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: f4916b171c5bb7d4db658019ace527e5, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: TowerDefence
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &499579980
 GameObject:
   m_ObjectHideFlags: 3
@@ -3230,16 +3308,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 864871272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_ActionsAsset: {fileID: -944628639613478452, guid: f4916b171c5bb7d4db658019ace527e5, type: 3}
+  m_PointAction: {fileID: 700257599853473179, guid: f4916b171c5bb7d4db658019ace527e5, type: 3}
+  m_MoveAction: {fileID: 555646913946429914, guid: f4916b171c5bb7d4db658019ace527e5, type: 3}
+  m_SubmitAction: {fileID: 6769318170276853562, guid: f4916b171c5bb7d4db658019ace527e5, type: 3}
+  m_CancelAction: {fileID: -4226156674487650535, guid: f4916b171c5bb7d4db658019ace527e5, type: 3}
+  m_LeftClickAction: {fileID: 2978573166958219913, guid: f4916b171c5bb7d4db658019ace527e5, type: 3}
+  m_MiddleClickAction: {fileID: -5912286498894242376, guid: f4916b171c5bb7d4db658019ace527e5, type: 3}
+  m_RightClickAction: {fileID: -887950661304927209, guid: f4916b171c5bb7d4db658019ace527e5, type: 3}
+  m_ScrollWheelAction: {fileID: -3881629950275294335, guid: f4916b171c5bb7d4db658019ace527e5, type: 3}
+  m_TrackedDevicePositionAction: {fileID: -8079638945453918031, guid: f4916b171c5bb7d4db658019ace527e5, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 3261642847072619152, guid: f4916b171c5bb7d4db658019ace527e5, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
 --- !u!114 &864871274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4475,6 +4561,7 @@ GameObject:
   - component: {fileID: 1203968630}
   - component: {fileID: 1203968628}
   - component: {fileID: 1203968633}
+  - component: {fileID: 1203968634}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4666,7 +4753,38 @@ MonoBehaviour:
   zoomMin: -2.1
   zoomMax: -1.95
   cameraDistance: -2
-  scrollSpeed: 0.1
+  scrollSpeed: 0.0001
+  CurrentMousePosition: {x: 0, y: 0}
+--- !u!114 &1203968634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203968626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: f4916b171c5bb7d4db658019ace527e5, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: UI
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1222481166
 GameObject:
   m_ObjectHideFlags: 0
@@ -6059,7 +6177,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8055083668322222562, guid: 38d7649c987cc02499731a7df6871cf9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 38d7649c987cc02499731a7df6871cf9, type: 3}
 --- !u!224 &1507328248 stripped
 RectTransform:

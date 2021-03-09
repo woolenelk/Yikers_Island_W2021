@@ -13,9 +13,13 @@ public class TowerBarDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHa
     public GameObject AtomicTransparent;
     public GameObject WallTransparent;
 
-    private void Awake()
-    {
+    private KeyboardSpawner Spawner;
 
+   
+
+    private void Start()
+    {
+        Spawner = FindObjectOfType<KeyboardSpawner>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -50,19 +54,19 @@ public class TowerBarDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHa
         {
             case TowerType.ATTACKING:
                 Debug.Log("Attack Tower Selected");
-                Instantiate(TowerTransparent);
+                Spawner.OnSelectTower1();
                 break;
             case TowerType.MINING:
                 Debug.Log("Mining Selected");
-                Instantiate(MiningTransparent);
+                Spawner.OnSelectTower2();
                 break;
             case TowerType.ATOMIC:
                 Debug.Log("Atomic Tower Selected");
-                Instantiate(AtomicTransparent);
+                Spawner.OnSelectTower3();
                 break;
             case TowerType.WALL:
                 Debug.Log("Wall Tower Selected");
-                Instantiate(WallTransparent);
+                Spawner.OnSelectTower4();
                 break;
             default:
                 break;
