@@ -30,7 +30,7 @@ public class EnemyAI : MonoBehaviour
     bool Alive = true; 
 
     public HealthBar healthBar;
-
+    public AudioSource DyingSound;
     private void OnTriggerEnter(Collider other)
     {
         if(!currentTarget.CompareTag("HUB"))
@@ -88,6 +88,7 @@ public class EnemyAI : MonoBehaviour
 		healthBar.SetHealth(HP, HPMAX);
         if (HP <=0 && Alive)
         {
+            DyingSound.Play();
             Debug.Log("Now Dead");
             agent.updatePosition = false;
             Alive = false;

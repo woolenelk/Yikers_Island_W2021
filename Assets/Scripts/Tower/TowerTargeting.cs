@@ -34,7 +34,8 @@ public class TowerTargeting : MonoBehaviour
     public Transform yaw;
 
     private LineRenderer beam;
-    
+
+    public AudioSource shootSound;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -135,7 +136,7 @@ public class TowerTargeting : MonoBehaviour
         {
             currentEnemyTarget.GetComponent<EnemyAI>().TakeDamage(Damage);
             timer = 1.0f / AttacksPerSecond;
-
+            shootSound.Play();
 
             AimAtTarget();
         }

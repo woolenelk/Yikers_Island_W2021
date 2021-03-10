@@ -8,6 +8,8 @@ public class MiningTower : Tower
     float startTime = 0f;
     [SerializeField]
     float endTime = 5f;
+
+    public AudioSource MiningSound;
     private void Awake()
     {
         Type = TowerType.MINING;
@@ -31,6 +33,7 @@ public class MiningTower : Tower
         {
             //ResourceSystem.Instance.SetOre(ResourceSystem.Instance.GetOre() + 1); // some bug, adding 2 ore for some reason.
             ResourceSystem.Instance.AddOre(1);
+            MiningSound.Play();
             startTime = 0f;
         }
         startTime += 1 * Time.deltaTime;

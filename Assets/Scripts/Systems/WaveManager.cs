@@ -25,6 +25,8 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     private Text ScoreText;
 
+    public AudioSource newWaveSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +66,7 @@ public class WaveManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.5f);
+        newWaveSound.Play();
         isSpawningWave = false;
     }
 
