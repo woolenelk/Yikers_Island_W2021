@@ -622,6 +622,12 @@ public class @TowerDefenceInput : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Rebind"",
+            ""id"": ""3b3777b9-cf9c-4468-900a-0b90b729f4e2"",
+            ""actions"": [],
+            ""bindings"": []
         }
     ],
     ""controlSchemes"": []
@@ -645,6 +651,8 @@ public class @TowerDefenceInput : IInputActionCollection, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        // Rebind
+        m_Rebind = asset.FindActionMap("Rebind", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -860,6 +868,31 @@ public class @TowerDefenceInput : IInputActionCollection, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Rebind
+    private readonly InputActionMap m_Rebind;
+    private IRebindActions m_RebindActionsCallbackInterface;
+    public struct RebindActions
+    {
+        private @TowerDefenceInput m_Wrapper;
+        public RebindActions(@TowerDefenceInput wrapper) { m_Wrapper = wrapper; }
+        public InputActionMap Get() { return m_Wrapper.m_Rebind; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(RebindActions set) { return set.Get(); }
+        public void SetCallbacks(IRebindActions instance)
+        {
+            if (m_Wrapper.m_RebindActionsCallbackInterface != null)
+            {
+            }
+            m_Wrapper.m_RebindActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+            }
+        }
+    }
+    public RebindActions @Rebind => new RebindActions(this);
     public interface ITowerDefenceActions
     {
         void OnSelectTower1(InputAction.CallbackContext context);
@@ -880,5 +913,8 @@ public class @TowerDefenceInput : IInputActionCollection, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+    }
+    public interface IRebindActions
+    {
     }
 }
