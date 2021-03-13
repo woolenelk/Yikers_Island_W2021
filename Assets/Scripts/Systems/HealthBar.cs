@@ -11,12 +11,20 @@ public class HealthBar : MonoBehaviour
 
     public Vector3 offset;
 
+    private void Start()
+    {
+        //if(gameObject.CompareTag("Enemy"))
+        //{
+        //    healthSlider.gameObject.SetActive(false);
+        //}
+    }
     // Update is called once per frame
     void Update()
     {
         //healthSlider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + offset);
         //healthSlider.transform.position = offset;
-        healthSlider.transform.rotation = Quaternion.identity;
+        offset = transform.position - Camera.main.transform.position;
+        healthSlider.transform.rotation = Quaternion.LookRotation(offset);
     }
 
     public void SetHealth(int health, int maxHealth)
