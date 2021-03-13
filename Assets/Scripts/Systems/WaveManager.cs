@@ -30,13 +30,20 @@ public class WaveManager : MonoBehaviour
 
     public AudioSource newWaveSound;
 
+    [SerializeField]
+    private bool IsInMenu = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        if (!IsInMenu)
+        {
         StatMoverScript.Instance.WaveReached = wave;
+        ScoreText.text = "Curent Wave: " + wave.ToString();
+
+        }
         //StatMover = FindObjectOfType<StatMoverScript>();
         isSpawningWave = false;
-        ScoreText.text = "Curent Wave: " + wave.ToString();
     }
 
     // Update is called once per frame
@@ -63,8 +70,12 @@ public class WaveManager : MonoBehaviour
             ListofSpawnPoints.Add(Random.Range(0, SpawnPoints.Count));
 
         wave++;
+        if (!IsInMenu)
+        {
         ScoreText.text = "Curent Wave: " + wave.ToString();
         StatMoverScript.Instance.WaveReached = wave;
+
+        }
         //StatMover.WaveReached = wave;
         for (int i = 0; i < EnemysPerWave + (wave * waveScaleFactor);)
         {
@@ -80,7 +91,12 @@ public class WaveManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.5f);
+        if (!IsInMenu)
+        {
+
         newWaveSound.Play();
+
+        }
         isSpawningWave = false;
     }
 
