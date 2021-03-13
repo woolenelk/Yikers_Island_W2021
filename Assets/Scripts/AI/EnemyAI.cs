@@ -27,7 +27,12 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     GameObject currentTarget;
     [SerializeField]
-    bool Alive = true; 
+    bool Alive = true;
+
+    [SerializeField]
+    GameObject deathPop;
+
+    private Vector3 deathPosition;
 
     public HealthBar healthBar;
     public AudioSource DyingSound;
@@ -93,6 +98,8 @@ public class EnemyAI : MonoBehaviour
             agent.updatePosition = false;
             Alive = false;
             agent.enabled = false;
+            deathPosition = transform.position;
+            Instantiate(deathPop, deathPosition, transform.rotation);
             transform.Translate(new Vector3(0, -100, 0));
             GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceSystem>().AddPlutonium(PlutoniumValue);
             StartCoroutine(Death());
@@ -124,7 +131,9 @@ public class EnemyAI : MonoBehaviour
     {
         ResourceSystem.Instance.AddPlutonium(PlutoniumValue);
         yield return new WaitForSeconds(0.5f);
+
         
+
         Destroy(this.gameObject);
     }
 
