@@ -170,7 +170,7 @@ MonoBehaviour:
   HP: 20
   HPMAX: 20
   range: 3
-  damage: 1
+  damage: 2
   PlutoniumValue: 1
   targetting: 1
   sphereCollider: {fileID: 0}
