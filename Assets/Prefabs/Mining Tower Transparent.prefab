@@ -114,6 +114,7 @@ MonoBehaviour:
   AtomicTower: {fileID: 1495181449431707717, guid: 56c16ca7311bf194791b21b29de909bf, type: 3}
   Wall: {fileID: 4053762486758101343, guid: c7b63e0592791764b901e19f030bf036, type: 3}
   offset: {x: 0, y: 0.6, z: 0}
+  Spawner: {fileID: 0}
 --- !u!114 &1938856490704641928
 MonoBehaviour:
   m_ObjectHideFlags: 0

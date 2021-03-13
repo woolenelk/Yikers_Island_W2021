@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Placement : MonoBehaviour
 {
+    [SerializeField]
+    SkinnedMeshRenderer rend;
+
+    private Grid grid;
     RaycastHit hit;
     Vector3 movePoint;
+    
     public GameObject AttackTower;
     public GameObject MiningTower;
     public GameObject AtomicTower;
@@ -13,14 +18,20 @@ public class Placement : MonoBehaviour
     public Vector3 offset = new Vector3(0, 1, 0);
 
     private CameraController CameraController;
+    private int collisionCount = 0;
 
     public KeyboardSpawner Spawner;
 
+    private void Awake()
+    {
+        grid = FindObjectOfType<Grid>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         CameraController = FindObjectOfType<CameraController>();
+        //rend = gameObject.GetComponent<SkinnedMeshRenderer>();
 
         name = gameObject.name;
         //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);   //old code from phoenix
@@ -37,10 +48,11 @@ public class Placement : MonoBehaviour
     {
         Debug.Log("The tower is: " + gameObject.name);
         Ray ray = Camera.main.ScreenPointToRay(CameraController.CurrentMousePosition);
+        
 
         if (Physics.Raycast(ray, out hit, 50000.0f, (1 << 10)))
         {
-            transform.position = hit.point + offset;
+            TilePlacemnt(hit.point);
         }
 
         //Old code from phoenix
@@ -81,36 +93,55 @@ public class Placement : MonoBehaviour
         //}
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        collisionCount++;
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        collisionCount--;
+    }
+
+    private void TilePlacemnt(Vector3 clickPoint)
+    {
+        var finalPosition = grid.GetNearestPointOnGrid(clickPoint);
+        gameObject.transform.position = finalPosition + offset;
+    }
+
     public void OnPlaceTower()
     {
-        if (Spawner != null)
+        if (collisionCount == 0)
         {
-            Spawner.CurrentlySelectedTower = null;
+            if (Spawner != null)
+            {
+                Spawner.CurrentlySelectedTower = null;
 
-        }
+            }
 
-        if (name == "TowerTransparentUpright(Clone)")
-        {
+            if (name == "TowerTransparentUpright(Clone)")
+            {
                 Instantiate(AttackTower, transform.position, transform.rotation);
                 Destroy(gameObject);
-        }
+            }
 
-        if (name == "Mining Tower Transparent(Clone)")
-        {
+            if (name == "Mining Tower Transparent(Clone)")
+            {
                 Instantiate(MiningTower, transform.position, transform.rotation);
                 Destroy(gameObject);
-        }
+            }
 
-        if (name == "AtomicTower Transparent(Clone)")
-        {
+            if (name == "AtomicTower Transparent(Clone)")
+            {
                 Instantiate(AtomicTower, transform.position, transform.rotation);
                 Destroy(gameObject);
-        }
+            }
 
-        if (name == "Wall Transparent(Clone)")
-        {
+            if (name == "Wall Transparent(Clone)")
+            {
                 Instantiate(Wall, transform.position, transform.rotation);
                 Destroy(gameObject);
+            }
         }
     }
 
