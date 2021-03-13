@@ -18,7 +18,10 @@ public class WaveManager : MonoBehaviour
     bool isSpawningWave;
     [SerializeField]
     int LASTWAVE = 10;
-
+    [SerializeField]
+    float spawnRadiusCircle = 5;
+    [SerializeField]
+    int waveScaleFactor = 5;
     //private StatMoverScript StatMover;
 
     [Header("UI")]
@@ -52,16 +55,27 @@ public class WaveManager : MonoBehaviour
     IEnumerator SpawnWave()
     {
         isSpawningWave = true;
-        int WhichSpawnPoint = Random.Range(0, SpawnPoints.Count);
-        int EnemyTypeToSpawn = Random.Range(0, EnemysTypes.Count);
+        //int EnemyTypeToSpawn = Random.Range(0, EnemysTypes.Count);
+
+        List<int> ListofSpawnPoints = new List<int>();
+
+        for (int i = 0; i < (wave / 2) + 1; i++)
+            ListofSpawnPoints.Add(Random.Range(0, SpawnPoints.Count));
+
         wave++;
         ScoreText.text = "Curent Wave: " + wave.ToString();
         StatMoverScript.Instance.WaveReached = wave;
         //StatMover.WaveReached = wave;
-        for (int i = 0; i < EnemysPerWave; i++)
+        for (int i = 0; i < EnemysPerWave + (wave * waveScaleFactor);)
         {
-            Instantiate(EnemysTypes[EnemyTypeToSpawn], SpawnPoints[WhichSpawnPoint].transform.position, Quaternion.identity);
-            
+            for (int y = 0; y < ListofSpawnPoints.Count; y++)
+            {
+                i++;
+                float radians = Random.Range(0, 360) / Mathf.PI;
+
+                Vector3 randomOffset = new Vector3(Mathf.Sin(radians) * spawnRadiusCircle, 0, Mathf.Cos(radians) * spawnRadiusCircle);
+                Instantiate(EnemysTypes[Random.Range(0, EnemysTypes.Count)], SpawnPoints[ListofSpawnPoints[y]].transform.position + randomOffset, Quaternion.identity);
+            }
             yield return new WaitForSeconds(0.5f);
         }
 
