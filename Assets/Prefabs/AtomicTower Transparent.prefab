@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5265851333544308869}
   - component: {fileID: 8544154892233770152}
   - component: {fileID: -4787607395376745297}
+  - component: {fileID: 3641447808990553164}
   m_Layer: 0
   m_Name: AtomicTower Transparent
   m_TagString: Untagged
@@ -65,11 +66,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 538ebdf7898852245b4c0a6f28a1babf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rend: {fileID: 7712886751342166339}
   AttackTower: {fileID: 1190037696510315186, guid: 30963231c23ebf74bb1b44816e122d60, type: 3}
   MiningTower: {fileID: 4653526430327266060, guid: 964ca14d24d4d0044a26703e6143efba, type: 3}
   AtomicTower: {fileID: 1495181449431707717, guid: 56c16ca7311bf194791b21b29de909bf, type: 3}
   Wall: {fileID: 4053762486758101343, guid: c7b63e0592791764b901e19f030bf036, type: 3}
   offset: {x: 0, y: 0, z: 0}
+  Spawner: {fileID: 0}
 --- !u!114 &-4787607395376745297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +103,19 @@ MonoBehaviour:
   m_DefaultActionMap: TowerDefence
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!65 &3641447808990553164
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495181449431707717}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.93, y: 2.16, z: 3.82}
+  m_Center: {x: 0, y: 1.01, z: 0}
 --- !u!1 &6552875264071558097
 GameObject:
   m_ObjectHideFlags: 0
