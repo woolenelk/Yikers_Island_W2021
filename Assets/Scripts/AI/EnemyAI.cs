@@ -17,7 +17,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     float range;
     [SerializeField]
-    float damage;
+    int damage;
     [SerializeField]
     int PlutoniumValue;
     [SerializeField]
@@ -27,7 +27,12 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     GameObject currentTarget;
     [SerializeField]
-    bool Alive = true; 
+    bool Alive = true;
+
+    [SerializeField]
+    float attackRange;
+    private IEnumerator attackCoroutine;
+
 
     public HealthBar healthBar;
     public AudioSource DyingSound;
@@ -118,6 +123,16 @@ public class EnemyAI : MonoBehaviour
         //    //agent.updatePosition = false;
         //    agent.isStopped = true;
         //}
+
+        if (distance <= attackRange)
+        {
+            if (attackCoroutine == null)
+            {
+                attackCoroutine = Attack();
+                StartCoroutine(attackCoroutine);
+            }
+
+        }
     }
 
     IEnumerator Death()
@@ -136,5 +151,13 @@ public class EnemyAI : MonoBehaviour
     public bool IsAlive()
     {
         return Alive;
+    }
+
+    IEnumerator Attack()
+    {
+        currentTarget.GetComponent<Tower>().TakeDamage(damage);
+        yield return new WaitForSeconds(0.5f);
+
+        attackCoroutine = null;
     }
 }
