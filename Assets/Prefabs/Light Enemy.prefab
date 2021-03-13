@@ -170,13 +170,13 @@ MonoBehaviour:
   HP: 20
   HPMAX: 20
   range: 3
-  damage: 0
+  damage: 2
   PlutoniumValue: 1
   targetting: 1
   sphereCollider: {fileID: 0}
   currentTarget: {fileID: 0}
   Alive: 1
-  deathPop: {fileID: 9114054083145645743, guid: e2142b87cb5530e4c950fcfcf1fe8a80, type: 3}
+  attackRange: 2
   healthBar: {fileID: 7998111625036712721}
   DyingSound: {fileID: 4340288215896673141}
 --- !u!135 &362941296
