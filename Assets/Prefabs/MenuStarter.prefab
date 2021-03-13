@@ -2069,6 +2069,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUB
       objectReference: {fileID: 0}
+    - target: {fileID: 7607702026373234978, guid: 1cb879a1cc519e245a048243e592a0fb, type: 3}
+      propertyPath: InMenu
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cb879a1cc519e245a048243e592a0fb, type: 3}
 --- !u!4 &208683816025069052 stripped
@@ -2089,7 +2093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8539458160253985248, guid: 5d73c1628dde2b247a8abf5548112b37, type: 3}
       propertyPath: LASTWAVE
-      value: 10
+      value: 999
       objectReference: {fileID: 0}
     - target: {fileID: 8539458160253985248, guid: 5d73c1628dde2b247a8abf5548112b37, type: 3}
       propertyPath: ScoreText
@@ -2101,11 +2105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8539458160253985248, guid: 5d73c1628dde2b247a8abf5548112b37, type: 3}
       propertyPath: EnemysPerWave
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8539458160253985248, guid: 5d73c1628dde2b247a8abf5548112b37, type: 3}
       propertyPath: waveScaleFactor
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8539458160253985248, guid: 5d73c1628dde2b247a8abf5548112b37, type: 3}
       propertyPath: spawnRadiusCircle

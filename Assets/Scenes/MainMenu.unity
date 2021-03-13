@@ -2097,30 +2097,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 38097288816668847, guid: e34475bc083b39d49b7019cba4675408, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 697996918656220399, guid: e34475bc083b39d49b7019cba4675408, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 697996918656220399, guid: e34475bc083b39d49b7019cba4675408, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 697996918656220399, guid: e34475bc083b39d49b7019cba4675408, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 2729237629132625130, guid: e34475bc083b39d49b7019cba4675408, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2791825649654394604, guid: e34475bc083b39d49b7019cba4675408, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3677912597911199766, guid: e34475bc083b39d49b7019cba4675408, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2130,26 +2106,6 @@ PrefabInstance:
       value: MenuStarter
       objectReference: {fileID: 0}
     - target: {fileID: 4714710301175618183, guid: e34475bc083b39d49b7019cba4675408, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752290586568541190, guid: e34475bc083b39d49b7019cba4675408, type: 3}
-      propertyPath: LASTWAVE
-      value: 999
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752290586568541190, guid: e34475bc083b39d49b7019cba4675408, type: 3}
-      propertyPath: EnemysPerWave
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752290586568541190, guid: e34475bc083b39d49b7019cba4675408, type: 3}
-      propertyPath: waveScaleFactor
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6650863921510836129, guid: e34475bc083b39d49b7019cba4675408, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7721576625816925712, guid: e34475bc083b39d49b7019cba4675408, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
