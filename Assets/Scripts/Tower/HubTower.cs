@@ -20,6 +20,10 @@ public class HubTower : Tower
     void Update()
     {
         healthBar.SetHealth(currentHP, maxHP);
+    }
+
+    public void OnDestroy()
+    {
         if (currentHP <= 0)
         {
 
