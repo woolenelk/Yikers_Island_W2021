@@ -17,7 +17,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     float range;
     [SerializeField]
-    int damage;
+    float damage;
     [SerializeField]
     int PlutoniumValue;
     [SerializeField]
@@ -30,9 +30,9 @@ public class EnemyAI : MonoBehaviour
     bool Alive = true;
 
     [SerializeField]
-    float attackRange;
-    private IEnumerator attackCoroutine;
+    GameObject deathPop;
 
+    private Vector3 deathPosition;
 
     public HealthBar healthBar;
     public AudioSource DyingSound;
@@ -98,8 +98,10 @@ public class EnemyAI : MonoBehaviour
             agent.updatePosition = false;
             Alive = false;
             agent.enabled = false;
+            deathPosition = transform.position;
+            Instantiate(deathPop, deathPosition, transform.rotation);
             transform.Translate(new Vector3(0, -100, 0));
-            GameObject.FindGameObjectWithTag("ResourceManager")?.GetComponent<ResourceSystem>().AddPlutonium(PlutoniumValue);
+            GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceSystem>().AddPlutonium(PlutoniumValue);
             StartCoroutine(Death());
         }
         
@@ -123,23 +125,15 @@ public class EnemyAI : MonoBehaviour
         //    //agent.updatePosition = false;
         //    agent.isStopped = true;
         //}
-
-        if (distance <= attackRange)
-        {
-            if (attackCoroutine == null)
-            {
-                attackCoroutine = Attack();
-                StartCoroutine(attackCoroutine);
-            }
-
-        }
     }
 
     IEnumerator Death()
     {
-        ResourceSystem.Instance?.AddPlutonium(PlutoniumValue);
+        ResourceSystem.Instance.AddPlutonium(PlutoniumValue);
         yield return new WaitForSeconds(0.5f);
+
         
+
         Destroy(this.gameObject);
     }
 
@@ -151,13 +145,5 @@ public class EnemyAI : MonoBehaviour
     public bool IsAlive()
     {
         return Alive;
-    }
-
-    IEnumerator Attack()
-    {
-        currentTarget.GetComponent<Tower>().TakeDamage(damage);
-        yield return new WaitForSeconds(0.5f);
-
-        attackCoroutine = null;
     }
 }
