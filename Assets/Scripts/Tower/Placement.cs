@@ -89,25 +89,27 @@ public class Placement : MonoBehaviour
 
         }
 
-        if (name == "TowerTransparentUpright(Clone)")
+        if (name == "TowerTransparentUpright(Clone)" 
+            && ResourceSystem.Instance.GetEnergy() < ResourceSystem.Instance.EnergyMax 
+            && ResourceSystem.Instance.GetOre() >= 20)
         {
                 Instantiate(AttackTower, transform.position, transform.rotation);
                 Destroy(gameObject);
         }
 
-        if (name == "Mining Tower Transparent(Clone)")
+        if (name == "Mining Tower Transparent(Clone)" && ResourceSystem.Instance.GetEnergy() < ResourceSystem.Instance.EnergyMax)
         {
                 Instantiate(MiningTower, transform.position, transform.rotation);
                 Destroy(gameObject);
         }
 
-        if (name == "AtomicTower Transparent(Clone)")
+        if (name == "AtomicTower Transparent(Clone)" && ResourceSystem.Instance.GetPlutonium() >= 20)
         {
                 Instantiate(AtomicTower, transform.position, transform.rotation);
                 Destroy(gameObject);
         }
 
-        if (name == "Wall Transparent(Clone)")
+        if (name == "Wall Transparent(Clone)" && ResourceSystem.Instance.GetOre() >= 5)
         {
                 Instantiate(Wall, transform.position, transform.rotation);
                 Destroy(gameObject);

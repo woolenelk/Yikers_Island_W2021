@@ -1571,7 +1571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -631.91986, y: 514.4441}
+  m_AnchoredPosition: {x: -631.91986, y: 446.0041}
   m_SizeDelta: {x: 190.16, y: 43.112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &322207755
@@ -2522,6 +2522,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1109333304177817399, guid: 56c16ca7311bf194791b21b29de909bf, type: 3}
+      propertyPath: plutoniumCost
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1495181449431707717, guid: 56c16ca7311bf194791b21b29de909bf, type: 3}
       propertyPath: m_Name
       value: AtomicTower
@@ -3303,7 +3307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -631.91986, y: 402.56}
+  m_AnchoredPosition: {x: -631.91986, y: 334.12}
   m_SizeDelta: {x: 190.16, y: 43.112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &772603694
@@ -4145,7 +4149,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -631.91986, y: 459.44}
+  m_AnchoredPosition: {x: -631.91986, y: 391}
   m_SizeDelta: {x: 190.16, y: 43.112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1013657331

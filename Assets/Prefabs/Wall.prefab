@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   plutoniumCost: 0
-  oreCost: 1
+  oreCost: 5
   energyCost: 0
   currentHP: 20
   maxHP: 20

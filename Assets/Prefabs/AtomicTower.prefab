@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
-  plutoniumCost: 2
+  plutoniumCost: 20
   oreCost: 0
   energyCost: 0
   currentHP: 20
