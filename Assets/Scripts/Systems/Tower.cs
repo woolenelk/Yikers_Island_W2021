@@ -50,4 +50,14 @@ public class Tower : MonoBehaviour
         healthBar.SetHealth(currentHP, maxHP);
     }
 
+    public void TakeDamage(int damage)
+    {
+        currentHP -= damage;
+
+        if (currentHP <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
