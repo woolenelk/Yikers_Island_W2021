@@ -11,64 +11,91 @@ public class KeyboardSpawner : MonoBehaviour
 
     public GameObject CurrentlySelectedTower = null;
 
+    void ClearHolos()
+    {
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("holo"))
+        {
+            Destroy(obj);
+        }
+    }
+
     public void OnSelectTower1()
     {
-        if (CurrentlySelectedTower == null )
-        {
-            CurrentlySelectedTower = Instantiate(TowerTransparent);
-            CurrentlySelectedTower.GetComponent<Placement>().Spawner = this;
-        }
-        else
-        {
-            Destroy(CurrentlySelectedTower);
-            CurrentlySelectedTower = Instantiate(TowerTransparent);
-            CurrentlySelectedTower.GetComponent<Placement>().Spawner = this;
-        }
+        ClearHolos();
+        //if (CurrentlySelectedTower == null )
+        //{
+        //    CurrentlySelectedTower = Instantiate(TowerTransparent);
+        //    CurrentlySelectedTower.GetComponent<Placement>().Spawner = this;
+        //}
+        //else
+        //{
+        //    Destroy(CurrentlySelectedTower);
 
+        //}
+        CurrentlySelectedTower = Instantiate(TowerTransparent);
+        CurrentlySelectedTower.GetComponent<Placement>().Spawner = this;
     }
 
     public void OnSelectTower2()
     {
-        if (CurrentlySelectedTower == null)
-        {
-            CurrentlySelectedTower = Instantiate(MiningTransparent);
-            CurrentlySelectedTower.GetComponent<Placement>().Spawner = this;
-        }
-        else
-        {
-            Destroy(CurrentlySelectedTower);
-            CurrentlySelectedTower = Instantiate(MiningTransparent);
-            CurrentlySelectedTower.GetComponent<Placement>().Spawner = this;
-        }
+        ClearHolos();
+        //foreach (GameObject obj in GameObject.FindGameObjectsWithTag("holo"))
+        //{
+        //    Destroy(obj);
+        //}
+        //if (CurrentlySelectedTower == null)
+        //{
+        //    CurrentlySelectedTower = Instantiate(MiningTransparent);
+        //    CurrentlySelectedTower.GetComponent<Placement>().Spawner = this;
+        //}
+        //else
+        //{
+        //    Destroy(CurrentlySelectedTower);
+
+        //}
+        CurrentlySelectedTower = Instantiate(MiningTransparent);
+        CurrentlySelectedTower.GetComponent<Placement>().Spawner = this;
     }
 
     public void OnSelectTower3()
     {
-        if (CurrentlySelectedTower == null)
-        {
-            CurrentlySelectedTower = Instantiate(AtomicTransparent);
-            CurrentlySelectedTower.GetComponent<Placement>().Spawner = this;
-        }
-        else
-        {
-            Destroy(CurrentlySelectedTower);
-            CurrentlySelectedTower = Instantiate(AtomicTransparent);
-            CurrentlySelectedTower.GetComponent<Placement>().Spawner = this;
-        }
+        ClearHolos();
+        //foreach (GameObject obj in GameObject.FindGameObjectsWithTag("holo"))
+        //{
+        //    Destroy(obj);
+        //}
+        //if (CurrentlySelectedTower == null)
+        //{
+        //    CurrentlySelectedTower = Instantiate(AtomicTransparent);
+        //    CurrentlySelectedTower.GetComponent<Placement>().Spawner = this;
+        //}
+        //else
+        //{
+        //    Destroy(CurrentlySelectedTower);
+
+        //}
+        CurrentlySelectedTower = Instantiate(AtomicTransparent);
+        CurrentlySelectedTower.GetComponent<Placement>().Spawner = this;
     }
 
     public void OnSelectTower4()
     {
-        if (CurrentlySelectedTower == null)
-        {
-            CurrentlySelectedTower = Instantiate(WallTransparent);
-            CurrentlySelectedTower.GetComponent<Placement>().Spawner = this;
-        }
-        else
-        {
-            Destroy(CurrentlySelectedTower);
-            CurrentlySelectedTower = Instantiate(WallTransparent);
-            CurrentlySelectedTower.GetComponent<Placement>().Spawner = this;
-        }
+        ClearHolos();
+        //foreach (GameObject obj in GameObject.FindGameObjectsWithTag("holo"))
+        //{
+        //    Destroy(obj);
+        //}
+        //if (CurrentlySelectedTower == null)
+        //{
+        //    CurrentlySelectedTower = Instantiate(WallTransparent);
+        //    CurrentlySelectedTower.GetComponent<Placement>().Spawner = this;
+        //}
+        //else
+        //{
+        //    Destroy(CurrentlySelectedTower);
+
+        //}
+        CurrentlySelectedTower = Instantiate(WallTransparent);
+        CurrentlySelectedTower.GetComponent<Placement>().Spawner = this;
     }
 }

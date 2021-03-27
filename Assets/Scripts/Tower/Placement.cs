@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class Placement : MonoBehaviour
 {
+    [SerializeField]
+    SkinnedMeshRenderer rend;
+    [SerializeField]
+    MeshRenderer otherRend;
+
+
+    Material mat;
+
+    private Grid grid;
+    private int collisionCount = 0;
+
     RaycastHit hit;
     Vector3 movePoint;
     public GameObject AttackTower;
@@ -17,6 +28,13 @@ public class Placement : MonoBehaviour
     public KeyboardSpawner Spawner;
     public LayerMask SpawnLayer;
 
+    public Color holoRed;
+    public Color holoGreen;
+
+    private void Awake()
+    {
+        grid = FindObjectOfType<Grid>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -41,45 +59,80 @@ public class Placement : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 50000.0f, SpawnLayer))
         {
-            transform.position = hit.point + offset;
+            //transform.position = hit.point + offset;
+            TilePlacemnt(hit.point);
         }
 
-        
+        if (rend == null)
+        {
+            Debug.Log("rend is null");
+        }
+
+        float intensity = Mathf.Pow(2.0f, 2.61f);
+        holoRed = new Color(1 * intensity, 0, 0);
+        holoGreen = new Color(0, 1 * intensity, 0);
+
+        if (rend != null)
+        {
+            mat = rend.material;
+        }
+        else if (otherRend != null)
+        {
+            mat = otherRend.material;
+        }
     }
 
+     private void OnCollisionEnter(Collision other)
+    {
+        mat.SetColor("_HoloColor", holoRed);
+        collisionCount++;
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        mat.SetColor("_HoloColor", holoGreen);
+        collisionCount--;
+    }
+
+    private void TilePlacemnt(Vector3 clickPoint)
+    {
+        var finalPosition = grid.GetNearestPointOnGrid(clickPoint);
+        gameObject.transform.position = finalPosition + offset;
+    }
     public void OnPlaceTower()
     {
-        if (Spawner != null)
+
+
+        if (collisionCount == 0)
         {
-            Spawner.CurrentlySelectedTower = null;
-
-        }
-
-        if (name == "TowerTransparentUpright(Clone)" 
-            && ResourceSystem.Instance.GetEnergy() < ResourceSystem.Instance.EnergyMax 
+            if (Spawner != null)
+            {
+                Spawner.CurrentlySelectedTower = null;
+            }
+            if (name == "TowerTransparentUpright(Clone)"
+            && ResourceSystem.Instance.GetEnergy() < ResourceSystem.Instance.EnergyMax
             && ResourceSystem.Instance.GetOre() >= 20)
-        {
+            {
                 Instantiate(AttackTower, transform.position, transform.rotation);
                 Destroy(gameObject);
-        }
-
-        if (name == "Mining Tower Transparent(Clone)" && ResourceSystem.Instance.GetEnergy() < ResourceSystem.Instance.EnergyMax)
-        {
+            }
+            if (name == "Mining Tower Transparent(Clone)" && ResourceSystem.Instance.GetEnergy() < ResourceSystem.Instance.EnergyMax)
+            {
                 Instantiate(MiningTower, transform.position, transform.rotation);
                 Destroy(gameObject);
-        }
-
-        if (name == "AtomicTower Transparent(Clone)" && ResourceSystem.Instance.GetPlutonium() >= 20)
-        {
+            }
+            if (name == "AtomicTower Transparent(Clone)" && ResourceSystem.Instance.GetPlutonium() >= 20)
+            {
                 Instantiate(AtomicTower, transform.position, transform.rotation);
                 Destroy(gameObject);
-        }
-
-        if (name == "Wall Transparent(Clone)" && ResourceSystem.Instance.GetOre() >= 5)
-        {
+            }
+            if (name == "Wall Transparent(Clone)" && ResourceSystem.Instance.GetOre() >= 5)
+            {
                 Instantiate(Wall, transform.position, transform.rotation);
                 Destroy(gameObject);
+            }
         }
+
     }
 
 }

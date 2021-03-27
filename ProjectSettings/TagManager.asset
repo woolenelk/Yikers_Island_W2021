@@ -16,6 +16,7 @@ TagManager:
   - SaveLoadManager
   - WaveManager
   - UI
+  - holo
   layers:
   - Default
   - TransparentFX
