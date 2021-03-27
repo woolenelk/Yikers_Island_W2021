@@ -90,8 +90,8 @@ public class SaveLoadManager : MonoBehaviour
         resourceSystem = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceSystem>();
         waveManager = GameObject.FindGameObjectWithTag("WaveManager").GetComponent<WaveManager>();
 
-        data.plutonium = resourceSystem.EarnedPlutonium;
-        data.ore = resourceSystem.EarnedOre;
+        data.plutonium = resourceSystem.GetPlutonium();
+        data.ore = resourceSystem.GetOre();
 
         data.Wave = waveManager.GetWave();
 
@@ -141,7 +141,7 @@ public class SaveLoadManager : MonoBehaviour
 
     IEnumerator LoadNow()
     {
-        yield return new WaitForSeconds(0.1f);
+        
         s_Data = PlayerPrefs.GetString("SaveSlot","null");
         Debug.Log("check if null = " + s_Data);
         if (s_Data != "null")
@@ -174,8 +174,7 @@ public class SaveLoadManager : MonoBehaviour
             data = JsonUtility.FromJson<SaveData>(s_Data);
             waveManager.SetWave(data.Wave);
 
-            resourceSystem.AddPlutonium(data.plutonium);
-            resourceSystem.AddOre(data.ore);
+       
 
             foreach (Towers tower in data.AttackTowers.ListsOfTowers)
             {
@@ -200,6 +199,9 @@ public class SaveLoadManager : MonoBehaviour
                 GameObject temp = Instantiate(WallPrefab, tower.postion, Quaternion.identity);
                 temp.GetComponent<Tower>().currentHP = tower.health;
             }
+            yield return new WaitForSeconds(0.25f);
+            resourceSystem.SetPlutonium(data.plutonium);
+            resourceSystem.SetOre(data.ore);
         }
     }
 }

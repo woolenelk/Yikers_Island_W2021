@@ -94,6 +94,7 @@ public class ResourceSystem : MonoBehaviour
     private void FixedUpdate()
     {
         EnergyMax = (GameObject.FindGameObjectsWithTag("Energy").Length * 2) + 4;
+        Energy = GameObject.FindGameObjectsWithTag("Tower").Length + GameObject.FindGameObjectsWithTag("Resource").Length;
         plutoniumText.text = /*"Plutonium: " +*/ Plutonium.ToString();
         oreText.text = /*"Ore: " +*/ Ore.ToString();
         energyText.text = /*"Energy: " +*/ Energy.ToString() + "/" + EnergyMax.ToString();
