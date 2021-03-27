@@ -16,6 +16,13 @@ public class CameraController : MonoBehaviour
     Vector2 PreviousMousePosition;
     public Vector2 CurrentMousePosition;
 
+    int movementDirection;
+
+    private void Start()
+    {
+        movementDirection = (StatMoverScript.Instance.LookControlsInverted ? -1 : 1);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -171,7 +178,7 @@ public class CameraController : MonoBehaviour
         if (IsPressed)
         {
             direction = touchStart - GetWorldPosition(groundZ);
-            Camera.main.transform.position += direction;
+            Camera.main.transform.position += direction.normalized * movementDirection;
 
             float clampX = Mathf.Clamp(Camera.main.transform.position.x, -100, 100);
             //float clampX = Mathf.Clamp(Camera.main.transform.position.x, -100, 100);

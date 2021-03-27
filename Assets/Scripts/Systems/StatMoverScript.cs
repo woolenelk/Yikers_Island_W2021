@@ -22,7 +22,7 @@ public class StatMoverScript : MonoBehaviour
     }
 
 
-
+    public bool LookControlsInverted = false;
 
     public int WaveReached;
 
