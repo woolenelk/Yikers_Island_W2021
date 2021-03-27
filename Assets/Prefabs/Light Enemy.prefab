@@ -176,7 +176,6 @@ MonoBehaviour:
   sphereCollider: {fileID: 0}
   currentTarget: {fileID: 0}
   Alive: 1
-  attackRange: 2
   deathPop: {fileID: 9114054083145645743, guid: e2142b87cb5530e4c950fcfcf1fe8a80, type: 3}
   healthBar: {fileID: 7998111625036712721}
   DyingSound: {fileID: 4340288215896673141}
