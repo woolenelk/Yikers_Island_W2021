@@ -12,6 +12,7 @@ TagManager:
   - Resource
   - ResourceManager
   - Energy
+  - QuestManager
   layers:
   - Default
   - TransparentFX
