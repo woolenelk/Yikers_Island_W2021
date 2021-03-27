@@ -71,7 +71,7 @@ public class DeleteTower : MonoBehaviour
             var obj = objTransform.gameObject.name;*/
             if (hit.transform.gameObject.CompareTag("UI"))
                 return;
-                if (hit.transform.gameObject.CompareTag("Tower"))
+                if (hit.transform.gameObject.CompareTag("Tower") || hit.transform.gameObject.CompareTag("Energy") || hit.transform.gameObject.CompareTag("Resource") || hit.transform.gameObject.CompareTag("Wall"))
                 {
                     
                     button.SetActive(true);
