@@ -15,6 +15,7 @@ TagManager:
   - QuestManager
   - SaveLoadManager
   - WaveManager
+  - UI
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Wall
   - Marker
   - ground
-  - 
+  - tower
   - 
   - 
   - 

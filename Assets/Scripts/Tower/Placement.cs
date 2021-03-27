@@ -15,7 +15,7 @@ public class Placement : MonoBehaviour
     private Grid grid;
     RaycastHit hit;
     Vector3 movePoint;
-    
+
     public GameObject AttackTower;
     public GameObject MiningTower;
     public GameObject AtomicTower;
