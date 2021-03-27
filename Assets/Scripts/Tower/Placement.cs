@@ -15,6 +15,7 @@ public class Placement : MonoBehaviour
     private CameraController CameraController;
 
     public KeyboardSpawner Spawner;
+    public LayerMask SpawnLayer;
 
 
     // Start is called before the first frame update
@@ -38,47 +39,12 @@ public class Placement : MonoBehaviour
         Debug.Log("The tower is: " + gameObject.name);
         Ray ray = Camera.main.ScreenPointToRay(CameraController.CurrentMousePosition);
 
-        if (Physics.Raycast(ray, out hit, 50000.0f, (1 << 10)))
+        if (Physics.Raycast(ray, out hit, 50000.0f, SpawnLayer))
         {
             transform.position = hit.point + offset;
         }
 
-        //Old code from phoenix
-        //if (name == "TowerTransparentUpright(Clone)")
-        //{
-        //    if (Input.GetMouseButton(1))
-        //    {
-        //        Instantiate(AttackTower, transform.position, transform.rotation);
-        //        Destroy(gameObject);
-        //    }
-        //}
-
-        //if (name == "Mining Tower Transparent(Clone)")
-        //{
-        //    if (Input.GetMouseButton(1))
-        //    {
-        //        Instantiate(MiningTower, transform.position, transform.rotation);
-        //        Destroy(gameObject);
-        //    }
-        //}
-
-        //if (name == "AtomicTower Transparent(Clone)")
-        //{
-        //    if (Input.GetMouseButton(1))
-        //    {
-        //        Instantiate(AtomicTower, transform.position, transform.rotation);
-        //        Destroy(gameObject);
-        //    }
-        //}
-
-        //if (name == "Wall Transparent(Clone)")
-        //{
-        //    if (Input.GetMouseButton(1))
-        //    {
-        //        Instantiate(Wall, transform.position, transform.rotation);
-        //        Destroy(gameObject);
-        //    }
-        //}
+        
     }
 
     public void OnPlaceTower()
