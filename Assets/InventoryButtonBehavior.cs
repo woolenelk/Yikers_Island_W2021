@@ -17,10 +17,21 @@ public class InventoryButtonBehavior : MonoBehaviour
     RawImage rawImage;
     [SerializeField]
     List<Texture> Images;
+    private float Offset = 0;
     private void Awake()
     {
         parentRectTransform = transform.parent.GetComponent<RectTransform>();
+        if (StatMoverScript.Instance.IsRightHanded)
+        {
+            Offset = 0;
+        }
+        else
+        {
+            Offset = -1100;
+        }
+        transform.position += new Vector3(Offset, 0, 0);
     }
+
     public void OnInventoryButtonClicked()
     {
         switch (state)

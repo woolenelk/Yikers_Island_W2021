@@ -2101,6 +2101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42cb84cb3ed9ad147be9ceabcdd3eb65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LookControlsInverted: 0
+  IsRightHanded: 1
   WaveReached: 0
 --- !u!4 &431081551
 Transform:
@@ -10379,6 +10381,8 @@ MonoBehaviour:
   plutoniumText: {fileID: 322207755}
   oreText: {fileID: 1013657331}
   energyText: {fileID: 772603694}
+  EarnedOre: 0
+  EarnedPlutonium: 0
 --- !u!4 &2142906114
 Transform:
   m_ObjectHideFlags: 0
