@@ -57,6 +57,14 @@ public class @TowerDefenceInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""TargetTower"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""867f11f0-d266-4cce-a4d4-c02cfb5fe1ca"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -112,6 +120,61 @@ public class @TowerDefenceInput : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""PlaceTower"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0a09afb9-d434-4a81-87fe-059c9265b21f"",
+                    ""path"": ""<Touchscreen>/press"",
+                    ""interactions"": ""MultiTap"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlaceTower"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""28c33929-da36-4d35-ba40-81855726c301"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""TargetTower"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1378231f-f352-49f2-b0eb-03a60bf2ca8f"",
+                    ""path"": ""<Pen>/tip"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""TargetTower"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3960ec9b-968a-4518-b620-9f9a1bf86087"",
+                    ""path"": ""<Touchscreen>/touch*/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
+                    ""action"": ""TargetTower"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e4d0bbc4-2f05-4998-b5bb-9ed296b873f0"",
+                    ""path"": ""<XRController>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""TargetTower"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -639,6 +702,7 @@ public class @TowerDefenceInput : IInputActionCollection, IDisposable
         m_TowerDefence_SelectTower3 = m_TowerDefence.FindAction("SelectTower3", throwIfNotFound: true);
         m_TowerDefence_SelectTower4 = m_TowerDefence.FindAction("SelectTower4", throwIfNotFound: true);
         m_TowerDefence_PlaceTower = m_TowerDefence.FindAction("PlaceTower", throwIfNotFound: true);
+        m_TowerDefence_TargetTower = m_TowerDefence.FindAction("TargetTower", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -707,6 +771,7 @@ public class @TowerDefenceInput : IInputActionCollection, IDisposable
     private readonly InputAction m_TowerDefence_SelectTower3;
     private readonly InputAction m_TowerDefence_SelectTower4;
     private readonly InputAction m_TowerDefence_PlaceTower;
+    private readonly InputAction m_TowerDefence_TargetTower;
     public struct TowerDefenceActions
     {
         private @TowerDefenceInput m_Wrapper;
@@ -716,6 +781,7 @@ public class @TowerDefenceInput : IInputActionCollection, IDisposable
         public InputAction @SelectTower3 => m_Wrapper.m_TowerDefence_SelectTower3;
         public InputAction @SelectTower4 => m_Wrapper.m_TowerDefence_SelectTower4;
         public InputAction @PlaceTower => m_Wrapper.m_TowerDefence_PlaceTower;
+        public InputAction @TargetTower => m_Wrapper.m_TowerDefence_TargetTower;
         public InputActionMap Get() { return m_Wrapper.m_TowerDefence; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -740,6 +806,9 @@ public class @TowerDefenceInput : IInputActionCollection, IDisposable
                 @PlaceTower.started -= m_Wrapper.m_TowerDefenceActionsCallbackInterface.OnPlaceTower;
                 @PlaceTower.performed -= m_Wrapper.m_TowerDefenceActionsCallbackInterface.OnPlaceTower;
                 @PlaceTower.canceled -= m_Wrapper.m_TowerDefenceActionsCallbackInterface.OnPlaceTower;
+                @TargetTower.started -= m_Wrapper.m_TowerDefenceActionsCallbackInterface.OnTargetTower;
+                @TargetTower.performed -= m_Wrapper.m_TowerDefenceActionsCallbackInterface.OnTargetTower;
+                @TargetTower.canceled -= m_Wrapper.m_TowerDefenceActionsCallbackInterface.OnTargetTower;
             }
             m_Wrapper.m_TowerDefenceActionsCallbackInterface = instance;
             if (instance != null)
@@ -759,6 +828,9 @@ public class @TowerDefenceInput : IInputActionCollection, IDisposable
                 @PlaceTower.started += instance.OnPlaceTower;
                 @PlaceTower.performed += instance.OnPlaceTower;
                 @PlaceTower.canceled += instance.OnPlaceTower;
+                @TargetTower.started += instance.OnTargetTower;
+                @TargetTower.performed += instance.OnTargetTower;
+                @TargetTower.canceled += instance.OnTargetTower;
             }
         }
     }
@@ -900,6 +972,7 @@ public class @TowerDefenceInput : IInputActionCollection, IDisposable
         void OnSelectTower3(InputAction.CallbackContext context);
         void OnSelectTower4(InputAction.CallbackContext context);
         void OnPlaceTower(InputAction.CallbackContext context);
+        void OnTargetTower(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

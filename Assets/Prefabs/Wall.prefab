@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7487701161381961496}
   - component: {fileID: 8548831258520165341}
   - component: {fileID: -2681130198539969658}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -254,8 +254,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2935160822750049869}
     m_Modifications:
+    - target: {fileID: 8972973774910335965, guid: 17cefd8a823cf024b995fa7d677733bf, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972973775472550828, guid: 17cefd8a823cf024b995fa7d677733bf, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972973775537548883, guid: 17cefd8a823cf024b995fa7d677733bf, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8972973776549030966, guid: 17cefd8a823cf024b995fa7d677733bf, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972973776549030967, guid: 17cefd8a823cf024b995fa7d677733bf, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8972973776864837796, guid: 17cefd8a823cf024b995fa7d677733bf, type: 3}
@@ -353,6 +369,10 @@ PrefabInstance:
     - target: {fileID: 8972973776864837802, guid: 17cefd8a823cf024b995fa7d677733bf, type: 3}
       propertyPath: m_Name
       value: HealthCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972973776864837802, guid: 17cefd8a823cf024b995fa7d677733bf, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17cefd8a823cf024b995fa7d677733bf, type: 3}

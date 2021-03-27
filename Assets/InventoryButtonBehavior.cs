@@ -17,10 +17,21 @@ public class InventoryButtonBehavior : MonoBehaviour
     RawImage rawImage;
     [SerializeField]
     List<Texture> Images;
+    private float Offset = 0;
     private void Awake()
     {
         parentRectTransform = transform.parent.GetComponent<RectTransform>();
+        if (StatMoverScript.Instance.IsRightHanded)
+        {
+            Offset = 0;
+        }
+        else
+        {
+            Offset = -1100;
+        }
+        transform.position += new Vector3(Offset, 0, 0);
     }
+
     public void OnInventoryButtonClicked()
     {
         switch (state)
@@ -41,10 +52,10 @@ public class InventoryButtonBehavior : MonoBehaviour
         switch(state)
         {
             case InventoryState.Open:
-                parentRectTransform.position = new Vector3(parentRectTransform.position.x, Mathf.Lerp(parentRectTransform.position.y,0,Time.deltaTime), parentRectTransform.position.z);
+                parentRectTransform.position = new Vector3(parentRectTransform.position.x, Mathf.Lerp(parentRectTransform.position.y, 0 ,Time.deltaTime), parentRectTransform.position.z);
                 break;
             case InventoryState.Closed:
-                parentRectTransform.position = new Vector3(parentRectTransform.position.x, Mathf.Lerp(parentRectTransform.position.y, -200, Time.deltaTime), parentRectTransform.position.z);
+                parentRectTransform.position = new Vector3(parentRectTransform.position.x, Mathf.Lerp(parentRectTransform.position.y, -300, Time.deltaTime), parentRectTransform.position.z);
                 break;
         }
     }
