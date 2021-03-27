@@ -15,12 +15,13 @@ public class DeleteTower : MonoBehaviour
 
     public LayerMask RaycastMask;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        button.SetActive(false);
 
-        CameraController = FindObjectOfType<CameraController>();    
+        CameraController = FindObjectOfType<CameraController>();
+
     }
 
     public GameObject objectToDestroy;
@@ -38,26 +39,35 @@ public class DeleteTower : MonoBehaviour
         clicked = input.isPressed;
         if (!clicked)
             return;
-            //clickedTower = true;
+        //clickedTower = true;
 
-            var ray = Camera.main.ScreenPointToRay(CameraController.CurrentMousePosition);
+        StartCoroutine(TryDestroyTower());
 
-            RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, RaycastMask))
-            {
-                /*objTransform = hit.transform;
-                hit.transform.gameObject.CompareTag("Tower")
-                var obj = objTransform.gameObject.name;*/
-                if (hit.transform.gameObject.CompareTag("UI"))
-                return;
+        Debug.Log("Clicked Tower!");
+    }
 
+    IEnumerator TryDestroyTower()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        var ray = Camera.main.ScreenPointToRay(CameraController.CurrentMousePosition);
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, RaycastMask))
+        {
+            /*objTransform = hit.transform;
+            hit.transform.gameObject.CompareTag("Tower")
+            var obj = objTransform.gameObject.name;*/
+            if (!hit.transform.gameObject.CompareTag("UI"))
+            { 
                 if (hit.transform.gameObject.CompareTag("Tower") || hit.transform.gameObject.CompareTag("Energy") || hit.transform.gameObject.CompareTag("Resource") || hit.transform.gameObject.CompareTag("Wall"))
                 {
-                    
+
                     button.SetActive(true);
                     objectToDestroy = hit.transform.gameObject;
-                    
+
                 }
                 else
                 {
@@ -65,13 +75,11 @@ public class DeleteTower : MonoBehaviour
                     button.SetActive(false);
                 }
             }
-            else
-            {
-                button.SetActive(false);
+        }
+        else
+        {
+            button.SetActive(false);
 
-            }
-
-
-        Debug.Log("Clicked Tower!");
+        }
     }
 }
