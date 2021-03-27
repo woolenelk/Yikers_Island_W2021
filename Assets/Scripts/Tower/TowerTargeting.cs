@@ -60,7 +60,7 @@ public class TowerTargeting : MonoBehaviour
     void Start()
     {
         timer = 0;
-        sphereCollider = GetComponent<SphereCollider>();
+        //sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.radius = Range;
         //healthBar.SetHealth(10, 10); // we can put in health later
 

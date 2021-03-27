@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 125594223309062051}
   - component: {fileID: 6776265032639491783}
   - component: {fileID: 7600187073382763746}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mining Tower
   m_TagString: Resource
   m_Icon: {fileID: 0}
