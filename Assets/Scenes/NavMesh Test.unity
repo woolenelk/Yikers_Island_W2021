@@ -1076,11 +1076,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7607702026373234978, guid: 1cb879a1cc519e245a048243e592a0fb, type: 3}
       propertyPath: maxHP
-      value: 9999999
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7607702026373234978, guid: 1cb879a1cc519e245a048243e592a0fb, type: 3}
       propertyPath: currentHP
-      value: 9999999
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cb879a1cc519e245a048243e592a0fb, type: 3}
@@ -6237,6 +6237,7 @@ MonoBehaviour:
   RaycastMask:
     serializedVersion: 2
     m_Bits: 0
+  Input: {fileID: 0}
   objectToDestroy: {fileID: 0}
 --- !u!1 &1211458493
 GameObject:
@@ -9647,6 +9648,7 @@ MonoBehaviour:
   RaycastMask:
     serializedVersion: 2
     m_Bits: 96
+  Input: {fileID: 1910863526}
   objectToDestroy: {fileID: 0}
 --- !u!4 &1910863525
 Transform:
