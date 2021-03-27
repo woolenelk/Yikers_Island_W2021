@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 538ebdf7898852245b4c0a6f28a1babf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rend: {fileID: 0}
+  otherRend: {fileID: 0}
   AttackTower: {fileID: 1190037696510315186, guid: 30963231c23ebf74bb1b44816e122d60, type: 3}
   MiningTower: {fileID: 4653526430327266060, guid: 964ca14d24d4d0044a26703e6143efba, type: 3}
   AtomicTower: {fileID: 1495181449431707717, guid: 56c16ca7311bf194791b21b29de909bf, type: 3}
@@ -104,6 +106,8 @@ MonoBehaviour:
   SpawnLayer:
     serializedVersion: 2
     m_Bits: 0
+  holoRed: {r: 0, g: 0, b: 0, a: 0}
+  holoGreen: {r: 0, g: 0, b: 0, a: 0}
 --- !u!95 &2871754256684261979
 Animator:
   serializedVersion: 3
@@ -169,6 +173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 538ebdf7898852245b4c0a6f28a1babf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rend: {fileID: 0}
+  otherRend: {fileID: 3248208198879319596}
   AttackTower: {fileID: 1190037696510315186, guid: 30963231c23ebf74bb1b44816e122d60, type: 3}
   MiningTower: {fileID: 4653526430327266060, guid: 964ca14d24d4d0044a26703e6143efba, type: 3}
   AtomicTower: {fileID: 1495181449431707717, guid: 56c16ca7311bf194791b21b29de909bf, type: 3}
@@ -178,6 +184,8 @@ MonoBehaviour:
   SpawnLayer:
     serializedVersion: 2
     m_Bits: 1024
+  holoRed: {r: 1, g: 0, b: 0, a: 1}
+  holoGreen: {r: 0, g: 1, b: 0, a: 1}
 --- !u!114 &5095816017453299427
 MonoBehaviour:
   m_ObjectHideFlags: 0
