@@ -21,6 +21,7 @@ public class QuestManager : MonoBehaviour
         temp.GetComponent<Quest>().Initalize(info);
         questList.Add(temp);
     }
+
     // Start is called before the first frame update
     void Start()
     {

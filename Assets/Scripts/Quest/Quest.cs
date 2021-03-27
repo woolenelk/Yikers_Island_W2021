@@ -29,14 +29,14 @@ public class Quest : MonoBehaviour
 
         if (progress >= questInfo.targetNum)
         {
-            Destroy(gameObject);
-            // clean up
-
             if (questInfo.nextQ != null)
             {
                 GameObject.FindGameObjectWithTag("QuestManager").GetComponent<QuestManager>().CreateNewQuest(questInfo.nextQ);
                 //spawn next quest
             }
+
+            Destroy(gameObject);
+            // clean up
         }
     }
 

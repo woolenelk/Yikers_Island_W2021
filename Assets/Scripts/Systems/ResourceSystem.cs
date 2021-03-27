@@ -32,6 +32,9 @@ public class ResourceSystem : MonoBehaviour
     public Text oreText;
     public Text energyText;
 
+    public int EarnedOre = 0;
+    public int EarnedPlutonium = 0;
+
     public int GetPlutonium()
     {
         return Plutonium;
@@ -46,6 +49,8 @@ public class ResourceSystem : MonoBehaviour
     public void AddPlutonium( int _Plutonium)
     {
         Plutonium += _Plutonium;
+        if (_Plutonium > 0)
+            EarnedPlutonium += _Plutonium;
     }
 
     public int GetOre()
@@ -60,6 +65,8 @@ public class ResourceSystem : MonoBehaviour
     public void AddOre(int _ore)
     {
         Ore += _ore;
+        if (_ore > 0)
+            EarnedOre += _ore;
     }
 
     public int GetEnergy()
@@ -79,7 +86,7 @@ public class ResourceSystem : MonoBehaviour
     private void Start() // our starting resources
     {
         Plutonium = 50;
-        Ore = 50;
+        Ore = 150;
         Energy = 0;
         //EnergyMax = GameObject.FindGameObjectsWithTag("Resource").Length;
     }
