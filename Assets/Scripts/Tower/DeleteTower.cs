@@ -65,11 +65,11 @@ public class DeleteTower : MonoBehaviour
                     button.SetActive(false);
                 }
             }
-        else
-        {
-        button.SetActive(false);
+            else
+            {
+                button.SetActive(false);
 
-        }
+            }
 
 
         Debug.Log("Clicked Tower!");
