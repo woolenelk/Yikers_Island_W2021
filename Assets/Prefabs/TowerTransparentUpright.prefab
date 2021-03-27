@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2871754256684261979}
   m_Layer: 0
   m_Name: Tower Transparent
-  m_TagString: Tower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 7218907676170714668}
   m_Layer: 0
   m_Name: TowerTransparentUpright
-  m_TagString: Untagged
+  m_TagString: holo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

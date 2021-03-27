@@ -4485,7 +4485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &966144487
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6237,7 +6237,6 @@ MonoBehaviour:
   RaycastMask:
     serializedVersion: 2
     m_Bits: 0
-  Input: {fileID: 0}
   objectToDestroy: {fileID: 0}
 --- !u!1 &1211458493
 GameObject:
@@ -9648,7 +9647,6 @@ MonoBehaviour:
   RaycastMask:
     serializedVersion: 2
     m_Bits: 96
-  Input: {fileID: 1910863526}
   objectToDestroy: {fileID: 0}
 --- !u!4 &1910863525
 Transform:
