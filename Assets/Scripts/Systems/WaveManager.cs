@@ -33,6 +33,17 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     private bool IsInMenu = false;
 
+
+    public void SetWave(int w)
+    {
+        wave = w;
+    }
+
+    public int GetWave()
+    {
+        return wave;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

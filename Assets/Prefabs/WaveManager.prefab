@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8539458160253985248}
   m_Layer: 0
   m_Name: WaveManager
-  m_TagString: Untagged
+  m_TagString: WaveManager
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,8 +45,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemysTypes:
   - {fileID: 4909620578242376760, guid: e80b8bcad1bc2104db2f9c9e19b78fc8, type: 3}
+  - {fileID: 6710533860339531334, guid: af050dad6b63b844a85e95905009425d, type: 3}
   SpawnPoints:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   wave: 0
-  EnemysPerWave: 5
+  EnemysPerWave: 6
   isSpawningWave: 0
+  LASTWAVE: 10
+  spawnRadiusCircle: 3
+  waveScaleFactor: 4
+  ScoreText: {fileID: 0}
+  newWaveSound: {fileID: 0}
+  IsInMenu: 0

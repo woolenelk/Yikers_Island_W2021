@@ -17,7 +17,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     float range;
     [SerializeField]
-    float damage;
+    int damage;
     [SerializeField]
     int PlutoniumValue;
     [SerializeField]
@@ -28,7 +28,9 @@ public class EnemyAI : MonoBehaviour
     GameObject currentTarget;
     [SerializeField]
     bool Alive = true;
-
+    [SerializeField]
+    float attackRange;
+    private IEnumerator attackCoroutine;
     [SerializeField]
     GameObject deathPop;
 
@@ -36,6 +38,7 @@ public class EnemyAI : MonoBehaviour
 
     public HealthBar healthBar;
     public AudioSource DyingSound;
+
     private void OnTriggerEnter(Collider other)
     {
         if(!currentTarget.CompareTag("HUB"))
@@ -101,7 +104,7 @@ public class EnemyAI : MonoBehaviour
             deathPosition = transform.position;
             Instantiate(deathPop, deathPosition, transform.rotation);
             transform.Translate(new Vector3(0, -100, 0));
-            GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceSystem>().AddPlutonium(PlutoniumValue);
+            GameObject.FindGameObjectWithTag("ResourceManager")?.GetComponent<ResourceSystem>().AddPlutonium(PlutoniumValue);
             StartCoroutine(Death());
         }
         
@@ -114,6 +117,7 @@ public class EnemyAI : MonoBehaviour
         float distance = Vector3.Distance(transform.position, currentTarget.transform.position);
         if (agent == null)
             return;
+
         //if (distance > 2.5f)
         //{
         //    //agent.updatePosition = true;
@@ -125,14 +129,22 @@ public class EnemyAI : MonoBehaviour
         //    //agent.updatePosition = false;
         //    agent.isStopped = true;
         //}
+
+        if (distance <= attackRange)
+        {
+            if (attackCoroutine == null)
+            {
+                attackCoroutine = Attack();
+                StartCoroutine(attackCoroutine);
+            }
+
+        }
     }
 
     IEnumerator Death()
     {
-        ResourceSystem.Instance.AddPlutonium(PlutoniumValue);
+        ResourceSystem.Instance?.AddPlutonium(PlutoniumValue);
         yield return new WaitForSeconds(0.5f);
-
-        
 
         Destroy(this.gameObject);
     }
@@ -145,5 +157,13 @@ public class EnemyAI : MonoBehaviour
     public bool IsAlive()
     {
         return Alive;
+    }
+
+    IEnumerator Attack()
+    {
+        currentTarget.GetComponent<Tower>().TakeDamage(damage);
+        yield return new WaitForSeconds(0.5f);
+
+        attackCoroutine = null;
     }
 }
