@@ -44,6 +44,14 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "TargetTower",
+                    "type": "PassThrough",
+                    "id": "867f11f0-d266-4cce-a4d4-c02cfb5fe1ca",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -115,23 +123,45 @@
                 },
                 {
                     "name": "",
-                    "id": "82c81bce-9dc7-4002-afeb-859ebdb85bc4",
-                    "path": "<Touchscreen>/touch*/press",
+                    "id": "28c33929-da36-4d35-ba40-81855726c301",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Touch",
-                    "action": "Click",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "TargetTower",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "77fb323c-8df9-4d9b-a0a0-262381570e8f",
+                    "id": "1378231f-f352-49f2-b0eb-03a60bf2ca8f",
+                    "path": "<Pen>/tip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "TargetTower",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3960ec9b-968a-4518-b620-9f9a1bf86087",
                     "path": "<Touchscreen>/touch*/press",
                     "interactions": "",
                     "processors": "",
                     "groups": "Touch",
-                    "action": "Click",
+                    "action": "TargetTower",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e4d0bbc4-2f05-4998-b5bb-9ed296b873f0",
+                    "path": "<XRController>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "TargetTower",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
