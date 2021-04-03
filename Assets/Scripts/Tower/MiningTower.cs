@@ -10,6 +10,8 @@ public class MiningTower : Tower
     float endTime = 5f;
 
     public AudioSource MiningSound;
+
+    public bool EffectWorking = true;
     private void Awake()
     {
         Type = TowerType.MINING;
@@ -29,6 +31,10 @@ public class MiningTower : Tower
     {
         updateHealth();
         //healthBar.SetHealth(currentHP, maxHP);
+
+        if (!EffectWorking) return;
+
+
         if (startTime >= endTime)
         {
             //ResourceSystem.Instance.SetOre(ResourceSystem.Instance.GetOre() + 1); // some bug, adding 2 ore for some reason.

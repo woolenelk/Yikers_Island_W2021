@@ -131,6 +131,7 @@ MonoBehaviour:
   pitch: {fileID: 7445242971655929345}
   yaw: {fileID: 3193957781549105451}
   shootSound: {fileID: 7898131629322025208}
+  EffectWorking: 1
 --- !u!54 &1190037696510315195
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -299,6 +300,9 @@ MonoBehaviour:
   currentHP: 20
   maxHP: 20
   healthBar: {fileID: 5867515224654355569}
+  DeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &7898131629322025208
 AudioSource:
   m_ObjectHideFlags: 0

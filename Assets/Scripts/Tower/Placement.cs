@@ -31,9 +31,13 @@ public class Placement : MonoBehaviour
     public Color holoRed;
     public Color holoGreen;
 
+    [SerializeField]
+    private TowerManagerScript TowerManager;
+
     private void Awake()
     {
         grid = FindObjectOfType<Grid>();
+        TowerManager = FindObjectOfType<TowerManagerScript>();
     }
 
     // Start is called before the first frame update
@@ -113,12 +117,12 @@ public class Placement : MonoBehaviour
             && ResourceSystem.Instance.GetEnergy() < ResourceSystem.Instance.EnergyMax
             && ResourceSystem.Instance.GetOre() >= 20)
             {
-                Instantiate(AttackTower, transform.position, transform.rotation);
+                TowerManager.AddNewTower(Instantiate(AttackTower, transform.position, transform.rotation));
                 Destroy(gameObject);
             }
             if (name == "Mining Tower Transparent(Clone)" && ResourceSystem.Instance.GetEnergy() < ResourceSystem.Instance.EnergyMax)
             {
-                Instantiate(MiningTower, transform.position, transform.rotation);
+                TowerManager.AddNewTower(Instantiate(MiningTower, transform.position, transform.rotation));
                 Destroy(gameObject);
             }
             if (name == "AtomicTower Transparent(Clone)" && ResourceSystem.Instance.GetPlutonium() >= 20)

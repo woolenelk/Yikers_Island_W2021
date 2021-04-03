@@ -36,7 +36,7 @@ public class TowerTargeting : MonoBehaviour
     private LineRenderer beam;
 
     public AudioSource shootSound;
-
+    public bool EffectWorking = true;
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Something Entered");
@@ -73,6 +73,13 @@ public class TowerTargeting : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!EffectWorking)
+        {
+            animr.SetBool("SeesEnemy", false);
+            beam.SetPosition(1, pitch.position);
+            return;
+        }
+
         //healthBar.SetHealth(10, 10);
         if (targetStyle == TargetStyle.Single_RetargetOutRange)
         {
@@ -126,6 +133,8 @@ public class TowerTargeting : MonoBehaviour
     {
         if (currentEnemyTarget == null)
             return;
+
+        if (!EffectWorking) return;
 
         if (timer > 0)
         {

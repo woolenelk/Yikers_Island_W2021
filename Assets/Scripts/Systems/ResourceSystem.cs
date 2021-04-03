@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class ResourceSystem : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class ResourceSystem : MonoBehaviour
 
     public int EarnedOre = 0;
     public int EarnedPlutonium = 0;
+
+    public UnityEvent EnergyAdded;
 
     public int GetPlutonium()
     {
@@ -98,5 +101,15 @@ public class ResourceSystem : MonoBehaviour
         plutoniumText.text = /*"Plutonium: " +*/ Plutonium.ToString();
         oreText.text = /*"Ore: " +*/ Ore.ToString();
         energyText.text = /*"Energy: " +*/ Energy.ToString() + "/" + EnergyMax.ToString();
+    }
+
+    private void OnDestroy()
+    {
+        EnergyAdded.RemoveAllListeners();
+    }
+
+    public void AtomicTowerSpawned()
+    {
+        EnergyAdded.Invoke();
     }
 }
