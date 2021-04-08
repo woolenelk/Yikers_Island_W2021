@@ -30,6 +30,21 @@ public class DeleteTower : MonoBehaviour
     {
         if (objectToDestroy == null)
             return;
+        if(objectToDestroy.CompareTag("Tower"))
+        {
+            ResourceSystem.Instance.AddOre(15);
+            ResourceSystem.Instance.AddEnergy(-1);
+        }
+        if (objectToDestroy.CompareTag("Energy"))
+        {
+            ResourceSystem.Instance.AddPlutonium(15);
+            ResourceSystem.Instance.EnergyMax -= 1;
+        }
+        if (objectToDestroy.CompareTag("Resource"))
+        {
+            //ResourceSystem.Instance.AddOre();
+            ResourceSystem.Instance.AddEnergy(-1);
+        }
         Destroy(objectToDestroy);
         button.SetActive(false);
     }
