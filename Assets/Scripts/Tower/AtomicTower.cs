@@ -19,6 +19,7 @@ public class AtomicTower : Tower
         //maxHP = 20;
         //currentHP = maxHP;
         //healthBar.SetHealth(currentHP, maxHP);
+        ResourceSystem.Instance.AtomicTowerSpawned();
     }
 
     private void Update()

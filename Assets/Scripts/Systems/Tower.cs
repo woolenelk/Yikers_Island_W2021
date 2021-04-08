@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 enum TowerType
 {
@@ -26,6 +27,8 @@ public class Tower : MonoBehaviour
     public int maxHP;
 
     public HealthBar healthBar;
+
+    public UnityEvent<GameObject> DeathEvent;
 
     internal TowerType Type { get => type; set => type = value; }
 
@@ -58,6 +61,12 @@ public class Tower : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        DeathEvent.Invoke(this.gameObject);
+        DeathEvent.RemoveAllListeners();
     }
 
 }

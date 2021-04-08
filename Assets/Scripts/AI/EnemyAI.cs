@@ -63,7 +63,7 @@ public class EnemyAI : MonoBehaviour
                 }
                 break;
             case PREF_TARGET.RESOURCE:
-                if (other.CompareTag("Resource"))
+                if (other.CompareTag("Resource") || other.CompareTag("Energy"))
                 {
                     currentTarget = other.gameObject;
                     Debug.Log("Found Resource");
