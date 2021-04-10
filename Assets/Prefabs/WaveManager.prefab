@@ -46,6 +46,7 @@ MonoBehaviour:
   EnemysTypes:
   - {fileID: 4909620578242376760, guid: e80b8bcad1bc2104db2f9c9e19b78fc8, type: 3}
   - {fileID: 6710533860339531334, guid: af050dad6b63b844a85e95905009425d, type: 3}
+  - {fileID: 9084683101038417428, guid: 2217b5640e2bc854eb7bf0d5dd999f6c, type: 3}
   SpawnPoints:
   - {fileID: 0}
   - {fileID: 0}
