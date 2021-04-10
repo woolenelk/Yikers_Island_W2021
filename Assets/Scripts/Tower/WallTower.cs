@@ -14,11 +14,9 @@ public class WallTower : Tower
     void Start()
     {
         PayCost();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
         updateHealth();
     }
+
+   
 }

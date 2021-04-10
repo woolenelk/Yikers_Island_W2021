@@ -35,6 +35,7 @@ public class Tower : MonoBehaviour
     public void Start()
     {
         PayCost();
+        updateHealth();
     }
 
     public void PayCost()
@@ -44,10 +45,7 @@ public class Tower : MonoBehaviour
         ResourceSystem.Instance.AddPlutonium(-plutoniumCost);
     }
 
-    public void FixedUpdate()
-    {
-        updateHealth();
-    }
+    
     public void updateHealth()
     {
         healthBar.SetHealth(currentHP, maxHP);
@@ -56,7 +54,7 @@ public class Tower : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHP -= damage;
-
+        updateHealth();
         if (currentHP <= 0)
         {
             Destroy(gameObject);

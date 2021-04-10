@@ -33,9 +33,5 @@ public class QuestManager : MonoBehaviour
         questList.Add(temp);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

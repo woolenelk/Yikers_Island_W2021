@@ -38,6 +38,11 @@ public class ResourceSystem : MonoBehaviour
 
     public UnityEvent EnergyAdded;
 
+    [SerializeField]
+    private int EnergyGainedPerTower = 5;
+    [SerializeField]
+    private int StartingEnergy = 4;
+
     public int GetPlutonium()
     {
         return Plutonium;
@@ -96,7 +101,7 @@ public class ResourceSystem : MonoBehaviour
 
     private void FixedUpdate()
     {
-        EnergyMax = (GameObject.FindGameObjectsWithTag("Energy").Length * 2) + 4;
+        EnergyMax = (GameObject.FindGameObjectsWithTag("Energy").Length * EnergyGainedPerTower) + StartingEnergy;
         Energy = GameObject.FindGameObjectsWithTag("Tower").Length + GameObject.FindGameObjectsWithTag("Resource").Length;
         plutoniumText.text = /*"Plutonium: " +*/ Plutonium.ToString();
         oreText.text = /*"Ore: " +*/ Ore.ToString();
