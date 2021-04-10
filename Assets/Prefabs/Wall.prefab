@@ -98,8 +98,8 @@ MonoBehaviour:
   plutoniumCost: 0
   oreCost: 20
   energyCost: 0
-  currentHP: 20
-  maxHP: 20
+  currentHP: 50
+  maxHP: 50
   healthBar: {fileID: 8271511212541010851}
   DeathEvent:
     m_PersistentCalls:

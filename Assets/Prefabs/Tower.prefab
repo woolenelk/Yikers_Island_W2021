@@ -122,7 +122,7 @@ MonoBehaviour:
   targetStyle: 0
   AttacksPerSecond: 2
   timer: 0
-  Damage: 3
+  Damage: 5
   Range: 7
   currentEnemyTarget: {fileID: 0}
   sphereCollider: {fileID: 7041525735647897373}

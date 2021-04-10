@@ -1555,7 +1555,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.19
-  m_Speed: 3.5
+  m_Speed: 2.2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1579,19 +1579,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1280b8e9d1b6f2c4aabb76116ff82d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 40
-  HPMAX: 40
+  HP: 80
+  HPMAX: 80
   range: 6
-  damage: 1
+  damage: 5
   PlutoniumValue: 5
   targetting: 0
   sphereCollider: {fileID: 0}
   currentTarget: {fileID: 0}
   Alive: 1
-  attackRange: 3.25
+  attackRange: 6
   deathPop: {fileID: 9114054083145645743, guid: e2142b87cb5530e4c950fcfcf1fe8a80, type: 3}
   healthBar: {fileID: 2546198220159401733}
   DyingSound: {fileID: 6890537405784976656}
+  AttackDelay: 1.5
 --- !u!82 &6890537405784976656
 AudioSource:
   m_ObjectHideFlags: 0

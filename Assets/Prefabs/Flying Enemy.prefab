@@ -170,7 +170,7 @@ MonoBehaviour:
   HP: 20
   HPMAX: 20
   range: 10
-  damage: 1
+  damage: 3
   PlutoniumValue: 5
   targetting: 2
   sphereCollider: {fileID: 0}
@@ -180,6 +180,7 @@ MonoBehaviour:
   deathPop: {fileID: 9114054083145645743, guid: e2142b87cb5530e4c950fcfcf1fe8a80, type: 3}
   healthBar: {fileID: 8646316719594094959}
   DyingSound: {fileID: 2682225872496541963}
+  AttackDelay: 1
 --- !u!135 &1802252504788041998
 SphereCollider:
   m_ObjectHideFlags: 0

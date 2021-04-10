@@ -39,6 +39,10 @@ public class EnemyAI : MonoBehaviour
     public HealthBar healthBar;
     public AudioSource DyingSound;
 
+    [SerializeField]
+    private float AttackDelay = 0.5f;
+    private int ModifiedDamage = 1;
+
     private void OnTriggerEnter(Collider other)
     {
         if(!currentTarget.CompareTag("HUB"))
@@ -51,6 +55,7 @@ public class EnemyAI : MonoBehaviour
                 Debug.Log("Start Targetting");
                 if(other.CompareTag("Wall"))
                 {
+                    ModifiedDamage = 3;
                     currentTarget = other.gameObject;
                     Debug.Log("Found Wall");
                 }
@@ -58,6 +63,7 @@ public class EnemyAI : MonoBehaviour
             case PREF_TARGET.TOWER:
                 if (other.CompareTag("Tower"))
                 {
+                    ModifiedDamage = 1;
                     currentTarget = other.gameObject;
                     Debug.Log("Found Tower");
                 }
@@ -65,11 +71,14 @@ public class EnemyAI : MonoBehaviour
             case PREF_TARGET.RESOURCE:
                 if (other.CompareTag("Resource") || other.CompareTag("Energy"))
                 {
+
+                    ModifiedDamage = 1;
                     currentTarget = other.gameObject;
                     Debug.Log("Found Resource");
                 }
                 break;
             case PREF_TARGET.HUB:
+                ModifiedDamage = 1;
                 break;
         }
         agent.SetDestination(currentTarget.transform.position);
@@ -161,8 +170,8 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator Attack()
     {
-        currentTarget.GetComponent<Tower>().TakeDamage(damage);
-        yield return new WaitForSeconds(0.5f);
+        currentTarget.GetComponent<Tower>().TakeDamage(damage * ModifiedDamage);
+        yield return new WaitForSeconds(AttackDelay);
 
         attackCoroutine = null;
     }

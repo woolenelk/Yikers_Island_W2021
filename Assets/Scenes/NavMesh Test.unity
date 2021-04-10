@@ -10023,10 +10023,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6540920201036571654, guid: 30963231c23ebf74bb1b44816e122d60, type: 3}
-      propertyPath: oreCost
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30963231c23ebf74bb1b44816e122d60, type: 3}
 --- !u!1001 &2927144782136189673
@@ -10101,9 +10097,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9084683101038417426, guid: 2217b5640e2bc854eb7bf0d5dd999f6c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 5596542703603301327, guid: 2217b5640e2bc854eb7bf0d5dd999f6c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9084683101038417427, guid: 2217b5640e2bc854eb7bf0d5dd999f6c, type: 3}
       propertyPath: m_RootOrder
@@ -10155,14 +10151,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9084683101038417428, guid: 2217b5640e2bc854eb7bf0d5dd999f6c, type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9084683101038417430, guid: 2217b5640e2bc854eb7bf0d5dd999f6c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9084683101038417431, guid: 2217b5640e2bc854eb7bf0d5dd999f6c, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
