@@ -169,14 +169,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 20
   HPMAX: 20
-  range: 3
+  range: 10
   damage: 1
   PlutoniumValue: 5
-  targetting: 1
+  targetting: 2
   sphereCollider: {fileID: 0}
   currentTarget: {fileID: 0}
   Alive: 1
-  attackRange: 0
+  attackRange: 6
   deathPop: {fileID: 9114054083145645743, guid: e2142b87cb5530e4c950fcfcf1fe8a80, type: 3}
   healthBar: {fileID: 8646316719594094959}
   DyingSound: {fileID: 2682225872496541963}
