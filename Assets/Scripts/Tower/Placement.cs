@@ -88,7 +88,7 @@ public class Placement : MonoBehaviour
 
      private void OnCollisionEnter(Collision other)
     {
-        mat.SetColor("_HoloColor", holoRed);
+        mat?.SetColor("_HoloColor", holoRed);
         collisionCount++;
     }
 
