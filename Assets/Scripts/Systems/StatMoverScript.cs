@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,7 +28,18 @@ public class StatMoverScript : MonoBehaviour
 
     public int WaveReached;
 
-    
+    private bool GameLoaded = false;
+
+    public void SetLoadGame(bool loaded)
+    {
+        GameLoaded = loaded;
+    }
+
+    public bool IsGameLoaded()
+    {
+        return GameLoaded;
+    }
+
 
     // Start is called before the first frame update
     void Start()

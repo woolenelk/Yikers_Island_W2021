@@ -70,6 +70,16 @@ public class SaveLoadManager : MonoBehaviour
     {
         data = new SaveData();
         s_Data = "";
+
+        if (StatMoverScript.Instance.IsGameLoaded())
+        {
+            Load();
+            waveManager.Enabled = false;
+        }
+        else
+        {
+            waveManager.Enabled = true;
+        }
     }
 
     public void Save()
@@ -85,52 +95,64 @@ public class SaveLoadManager : MonoBehaviour
 
     IEnumerator SaveNow()
     {
+        waveManager = GameObject.FindGameObjectWithTag("WaveManager").GetComponent<WaveManager>();
+        data.Wave = waveManager.GetWave();
         yield return new WaitForSeconds(0.1f);
 
         resourceSystem = GameObject.FindGameObjectWithTag("ResourceManager").GetComponent<ResourceSystem>();
-        waveManager = GameObject.FindGameObjectWithTag("WaveManager").GetComponent<WaveManager>();
 
         data.plutonium = resourceSystem.GetPlutonium();
         data.ore = resourceSystem.GetOre();
 
-        data.Wave = waveManager.GetWave();
 
         GameObject[] listTower = GameObject.FindGameObjectsWithTag("Tower");
         foreach (GameObject obj in listTower)
         {
-            Towers temp = new Towers();
-            temp.postion = obj.transform.position;
-            temp.health = obj.GetComponent<Tower>().currentHP;
-            data.AttackTowers.ListsOfTowers.Add(temp);
+            if (obj != null)
+            {
+                Towers temp = new Towers();
+                temp.postion = obj.transform.position;
+                temp.health = obj.GetComponent<Tower>().currentHP;
+                data.AttackTowers.ListsOfTowers.Add(temp);
+            }
         }
 
         listTower = GameObject.FindGameObjectsWithTag("Energy");
         foreach (GameObject obj in listTower)
         {
-            Towers temp = new Towers();
-            temp.postion = obj.transform.position;
-            temp.health = obj.GetComponent<Tower>().currentHP;
-            data.EnergyTowers.ListsOfTowers.Add(temp);
+            if (obj != null)
+            {
+                Towers temp = new Towers();
+                temp.postion = obj.transform.position;
+                temp.health = obj.GetComponent<Tower>().currentHP;
+                data.EnergyTowers.ListsOfTowers.Add(temp);
+            }
            
         }
 
         listTower = GameObject.FindGameObjectsWithTag("Resource");
         foreach (GameObject obj in listTower)
         {
-            Towers temp = new Towers();
-            temp.postion = obj.transform.position;
-            temp.health = obj.GetComponent<Tower>().currentHP;
-            data.MiningTowers.ListsOfTowers.Add(temp);
+            if (obj != null)
+            {
+                Towers temp = new Towers();
+                temp.postion = obj.transform.position;
+                temp.health = obj.GetComponent<Tower>().currentHP;
+                data.MiningTowers.ListsOfTowers.Add(temp);
+            }
             
         }
 
         listTower = GameObject.FindGameObjectsWithTag("Wall");
         foreach (GameObject obj in listTower)
         {
-            Towers temp = new Towers();
-            temp.postion = obj.transform.position;
-            temp.health = obj.GetComponent<Tower>().currentHP;
-            data.WallTower.ListsOfTowers.Add(temp);
+            if (obj != null)
+            {
+                Towers temp = new Towers();
+                temp.postion = obj.transform.position;
+                temp.health = obj.GetComponent<Tower>().currentHP;
+                data.WallTower.ListsOfTowers.Add(temp);
+            }
             
         }
 
@@ -172,9 +194,9 @@ public class SaveLoadManager : MonoBehaviour
             }
 
             data = JsonUtility.FromJson<SaveData>(s_Data);
+
             waveManager.SetWave(data.Wave);
 
-       
 
             foreach (Towers tower in data.AttackTowers.ListsOfTowers)
             {
@@ -202,6 +224,8 @@ public class SaveLoadManager : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
             resourceSystem.SetPlutonium(data.plutonium);
             resourceSystem.SetOre(data.ore);
+            
+            waveManager.Enabled = true;
         }
     }
 }

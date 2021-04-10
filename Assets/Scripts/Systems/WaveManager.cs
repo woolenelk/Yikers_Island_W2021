@@ -33,7 +33,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     private bool IsInMenu = false;
 
-
+    public bool Enabled;
     public void SetWave(int w)
     {
         wave = w;
@@ -60,12 +60,15 @@ public class WaveManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        if (!Enabled) return;
         if (wave >LASTWAVE)
         {
             SceneManager.LoadScene("Victory");
         }
         if (!isSpawningWave && GameObject.FindGameObjectsWithTag("Enemy").Length <= 0)
         {
+            FindObjectOfType<SaveLoadManager>()?.Save();
             StartCoroutine(SpawnWave());
         }
     }

@@ -28,9 +28,12 @@ public class HubTower : Tower
     public void OnDestroy()
     {
         if (InMenu) return;
+
+
         if (currentHP <= 0)
         {
 
+            PlayerPrefs.SetString("SaveSlot", "null");
             SceneManager.LoadScene("GameOver");
         }
     }
