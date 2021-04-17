@@ -43,6 +43,8 @@ public class EnemyAI : MonoBehaviour
     private float AttackDelay = 0.5f;
     private int ModifiedDamage = 1;
 
+    
+
     private void OnTriggerEnter(Collider other)
     {
         if(!currentTarget.CompareTag("HUB"))

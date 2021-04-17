@@ -30,6 +30,9 @@ public class Tower : MonoBehaviour
 
     public UnityEvent<GameObject> DeathEvent;
 
+    public GameObject DamageIndicator;
+    IEnumerator DamageTakenCoroutine;
+
     internal TowerType Type { get => type; set => type = value; }
 
     public void Start()
@@ -55,6 +58,14 @@ public class Tower : MonoBehaviour
     {
         currentHP -= damage;
         updateHealth();
+
+        if (DamageTakenCoroutine != null)
+        {
+            StopCoroutine(DamageTakenCoroutine);
+        }
+        DamageTakenCoroutine = ShowDamageIndicator();
+        StartCoroutine(DamageTakenCoroutine);
+
         if (currentHP <= 0)
         {
             Destroy(gameObject);
@@ -65,6 +76,16 @@ public class Tower : MonoBehaviour
     {
         DeathEvent.Invoke(this.gameObject);
         DeathEvent.RemoveAllListeners();
+    }
+
+    IEnumerator ShowDamageIndicator()
+    {
+        if (DamageIndicator)
+        {
+            DamageIndicator.SetActive(true);
+            yield return new WaitForSeconds(2.0f);
+            DamageIndicator.SetActive(false);
+        }
     }
 
 }
